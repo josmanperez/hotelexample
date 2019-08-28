@@ -72,6 +72,10 @@ class Property: Codable {
     var rating:[OverallRating]?
     
     required init(from decoder: Decoder) throws {
+        self.id = 0
+    }
+    
+    func encode(to encoder: Encoder) throws {
         
     }
 
