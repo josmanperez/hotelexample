@@ -51,33 +51,36 @@ class PropertyCity: Codable {
 }
 
 /// Class property to handle objects
-class Property: Codable {
+struct Property {
     
     enum CodingKeys: String, CodingKey {
         case id
         case name
-        case description
         case latitude
         case longitude
-        case firstLineAddress = "address1"
-        case secondLineAddress = "address2"
-        case directions
+        //case description
+        //case firstLineAddress = "address1"
+        //case secondLineAddress = "address2"
+        //case directions
     }
     
-    var id: Int
-    var name: String?
-    var description: String?
-    var latitude: Double?
-    var longitude: Double?
-    var rating:[OverallRating]?
+    var id: String
+    var name: String
+    var latitude: String
+    var longitude: String
+    //var description: String
+    //var rating:[OverallRating]
     
-    required init(from decoder: Decoder) throws {
-        self.id = 0
-    }
-    
-    func encode(to encoder: Encoder) throws {
-        
-    }
+}
 
+extension Property: Decodable {
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        self.id = try container.decode(String.self, forKey: .id)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.latitude = try container.decode(String.self, forKey: .latitude)
+        self.longitude = try container.decode(String.self, forKey: .longitude)
+    }
 }
 
