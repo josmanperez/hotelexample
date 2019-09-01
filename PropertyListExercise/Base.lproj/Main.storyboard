@@ -12,8 +12,8 @@
         <!--Root View Controller-->
         <scene sceneID="3sr-V6-TOd">
             <objects>
-                <tableViewController id="buS-Wo-Rt2" customClass="ViewController" customModule="PropertyListExercise" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="67S-vN-pAg">
+                <tableViewController id="buS-Wo-Rt2" customClass="PropertyListViewController" customModule="PropertyListExercise" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="67S-vN-pAg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -33,6 +33,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="2f4-vT-zrh"/>
+                    <connections>
+                        <outlet property="tableView" destination="67S-vN-pAg" id="n9I-xG-krf"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2V-S5-sgY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

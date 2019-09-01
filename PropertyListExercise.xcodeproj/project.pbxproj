@@ -13,7 +13,7 @@
 		9C4D6C9E231A77BC003A66B6 /* PropertyListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D6C9D231A77BC003A66B6 /* PropertyListCellTableViewCell.swift */; };
 		9C4D6CA0231A77EF003A66B6 /* PropertyListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C4D6C9F231A77EF003A66B6 /* PropertyListViewCell.xib */; };
 		9C8A09D92317028F00250CC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8A09D82317028F00250CC1 /* AppDelegate.swift */; };
-		9C8A09DB2317028F00250CC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8A09DA2317028F00250CC1 /* ViewController.swift */; };
+		9C8A09DB2317028F00250CC1 /* PropertyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8A09DA2317028F00250CC1 /* PropertyListViewController.swift */; };
 		9C8A09DE2317028F00250CC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C8A09DC2317028F00250CC1 /* Main.storyboard */; };
 		9C8A09E12317028F00250CC1 /* PropertyListExercise.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C8A09DF2317028F00250CC1 /* PropertyListExercise.xcdatamodeld */; };
 		9C8A09E32317029000250CC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C8A09E22317029000250CC1 /* Assets.xcassets */; };
@@ -45,7 +45,7 @@
 		9C4D6C9F231A77EF003A66B6 /* PropertyListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PropertyListViewCell.xib; sourceTree = "<group>"; };
 		9C8A09D52317028F00250CC1 /* PropertyListExercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PropertyListExercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8A09D82317028F00250CC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9C8A09DA2317028F00250CC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9C8A09DA2317028F00250CC1 /* PropertyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListViewController.swift; sourceTree = "<group>"; };
 		9C8A09DD2317028F00250CC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9C8A09E02317028F00250CC1 /* PropertyListExercise.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PropertyListExercise.xcdatamodel; sourceTree = "<group>"; };
 		9C8A09E22317029000250CC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		9C4D6C9B231A6FDF003A66B6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9C8A09DA2317028F00250CC1 /* ViewController.swift */,
+				9C8A09DA2317028F00250CC1 /* PropertyListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -402,7 +402,7 @@
 				9C8A0A0023170C3C00250CC1 /* Constants.swift in Sources */,
 				9C8A09E12317028F00250CC1 /* PropertyListExercise.xcdatamodeld in Sources */,
 				9C4D6C9E231A77BC003A66B6 /* PropertyListCellTableViewCell.swift in Sources */,
-				9C8A09DB2317028F00250CC1 /* ViewController.swift in Sources */,
+				9C8A09DB2317028F00250CC1 /* PropertyListViewController.swift in Sources */,
 				9C40A28A23187F0600326086 /* ApiPropertyList.swift in Sources */,
 				9C8A09FE2317047300250CC1 /* Property.swift in Sources */,
 				9C3B0F8B2317295000DC2865 /* PropertyImage.swift in Sources */,

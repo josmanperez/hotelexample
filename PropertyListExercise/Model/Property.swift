@@ -12,7 +12,7 @@ import Foundation
 // MARK: Enum for common objects
 
 /// Enum for managing the differents types of propeties
-enum PropertyType: String {
+enum PropertyType: String, Decodable {
     case unknown = "Unknown"
     case hotel = "Hotel"
     case apartment = "Apartment"
@@ -31,6 +31,12 @@ enum PropertyType: String {
             self = .guesthouse
         default:
             self = .unknown
+        }
+    }
+    
+    var description: String {
+        get {
+            return self.rawValue
         }
     }
 }
@@ -62,6 +68,7 @@ struct Property: Decodable {
     enum CodingKeys: String, CodingKey {
         case id
         case name
+        case type
         case rating = "overallRating"
         case images
         case city
@@ -70,6 +77,7 @@ struct Property: Decodable {
     var id: String
     var name: String
     var rating: OverallRating
+    var type: PropertyType
     var city: PropertyCity
     var images:[PropertyImage]
     
