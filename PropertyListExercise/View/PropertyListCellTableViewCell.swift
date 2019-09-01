@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PropertyListCellTableViewCell: UITableViewCell {
     
@@ -14,8 +15,10 @@ class PropertyListCellTableViewCell: UITableViewCell {
     public static let nibName : String = "PropertyListViewCell"
     public static let height : CGFloat = 206.0
 
+    @IBOutlet weak var leftDecoratorView: UIView!
     @IBOutlet weak var propertyName: UILabel!
     @IBOutlet weak var propertyType: UILabel!
+    @IBOutlet weak var propertyImage: UIImageView!
     @IBOutlet weak var propertyCost: UILabel!
     @IBOutlet weak var rating: UILabel!
     @IBOutlet weak var ratingView: UIView! {
@@ -52,9 +55,6 @@ class PropertyListCellTableViewCell: UITableViewCell {
 //        self.contentView.layer.borderColor = UIColor.clear.cgColor
 //        self.contentView.layer.masksToBounds = true
 //        self.layer.masksToBounds = false
-        
-
-        
     }
     
     
@@ -64,10 +64,31 @@ class PropertyListCellTableViewCell: UITableViewCell {
         guard let _property = property else { return }
         propertyName.text = _property.name
         propertyType.text = _property.type.description
+        configureImage(with: _property.images)
         if let _rating = _property.rating.overall {
             rating.text = "\(_rating)"
         } else {
             rating.text = "-"
+        }
+    }
+    
+    /// Set image using asynclibrary for the background
+    fileprivate func configureImage(with images: [PropertyImage]) {
+        if !images.isEmpty, let imageResource = images.randomElement() {
+            let urlString = "\(imageResource.prefix)\(imageResource.suffix)"
+            let url = URL(string: urlString)
+            propertyImage.kf.indicatorType = .activity
+            propertyImage.kf.setImage(with: url) {
+                result in
+                switch result {
+                case .success(_):
+                    self.propertyImage.contentMode = .scaleAspectFill
+                case .failure(_):
+                    self.propertyImage.image = UIImage(named: ImagesResources.propertyDefault)
+                    self.propertyImage.contentMode = .scaleAspectFit
+                }
+                
+            }
         }
     }
 

@@ -14,3 +14,7 @@ enum PropertyTypeKey {
     static let guesthouse = "GUESTHOUSE"
     static let hostel = "HOSTEL"
 }
+
+struct ImagesResources {
+    static let propertyDefault = "propertyListDefault"
+}
