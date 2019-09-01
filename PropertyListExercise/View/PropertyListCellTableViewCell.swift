@@ -15,6 +15,7 @@ class PropertyListCellTableViewCell: UITableViewCell {
     public static let nibName : String = "PropertyListViewCell"
     public static let height : CGFloat = 206.0
 
+    @IBOutlet weak var propertyListView: UIView!
     @IBOutlet weak var city: UILabel!
     @IBOutlet weak var propertyName: UILabel!
     @IBOutlet weak var propertyType: UILabel!
@@ -44,17 +45,15 @@ class PropertyListCellTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    
-    
     // MARK: - Functions to configure Views
     
     /// Method to configure the tableViewCell itself
     fileprivate func configureView() {
-//        self.contentView.layer.cornerRadius = 5.0
-//        self.contentView.layer.borderWidth = 1.0
-//        self.contentView.layer.borderColor = UIColor.clear.cgColor
-//        self.contentView.layer.masksToBounds = true
-//        self.layer.masksToBounds = false
+        self.propertyListView.layer.cornerRadius = 5.0
+        self.propertyListView.layer.borderWidth = 1.0
+        self.propertyListView.layer.borderColor = UIColor.clear.cgColor
+        self.propertyListView.layer.masksToBounds = true
+        self.propertyListView.layer.masksToBounds = false
     }
     
     

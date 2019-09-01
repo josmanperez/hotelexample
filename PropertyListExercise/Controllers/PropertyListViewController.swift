@@ -80,6 +80,7 @@ extension PropertyListViewController: UITableViewDataSource {
         let property = results?.properties[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: PropertyListCellTableViewCell.reuseIdentifier, for: indexPath) as? PropertyListCellTableViewCell {
             cell.property = property
+            cell.backgroundColor = UIColor.clear
             cell.configureCell()
             return cell
         } else {
