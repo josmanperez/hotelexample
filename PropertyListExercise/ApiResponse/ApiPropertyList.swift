@@ -8,6 +8,6 @@
 
 import Foundation
 
-class Response: Decodable {
+class ApiPropertyList: Decodable {
     let properties:[Property]
 }

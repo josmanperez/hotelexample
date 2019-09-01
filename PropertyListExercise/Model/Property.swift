@@ -50,37 +50,38 @@ class PropertyCity: Codable {
     var country: String?
 }
 
-/// Class property to handle objects
-struct Property {
+/// Class for imagen inside property list objects
+class PropertyImage: Codable {
+    var suffix: String
+    var prefix: String
+}
+
+/// Class property to handle list of property objects
+struct Property: Decodable {
     
     enum CodingKeys: String, CodingKey {
         case id
         case name
-        case latitude
-        case longitude
-        //case description
-        //case firstLineAddress = "address1"
-        //case secondLineAddress = "address2"
-        //case directions
+        case rating = "overallRating"
+        case images
+        case city
     }
     
     var id: String
     var name: String
-    var latitude: String
-    var longitude: String
-    //var description: String
-    //var rating:[OverallRating]
+    var rating: OverallRating
+    var city: PropertyCity
+    var images:[PropertyImage]
     
 }
 
-extension Property: Decodable {
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        
-        self.id = try container.decode(String.self, forKey: .id)
-        self.name = try container.decode(String.self, forKey: .name)
-        self.latitude = try container.decode(String.self, forKey: .latitude)
-        self.longitude = try container.decode(String.self, forKey: .longitude)
-    }
-}
+//extension Property: Decodable {
+//    init(from decoder: Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//
+//        self.id = try container.decode(String.self, forKey: .id)
+//        self.name = try container.decode(String.self, forKey: .name)
+//        self.rating = try container.decode(OverallRating.self, forKey: .rating)
+//    }
+//}
 

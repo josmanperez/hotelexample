@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
     
     let activityView = UIActivityIndicatorView(style: .gray)
     let request = "https://private-anon-b0f95b2571-practical3.apiary-mock.com/cities/1530/properties/"
@@ -28,9 +28,9 @@ class ViewController: UIViewController {
                 print("JSON: \((response.result.value) ?? "Error")")
                 
                 let decoder = JSONDecoder()
-                let property = try! decoder.decode(Response.self, from: data)
+                let results = try! decoder.decode(ApiPropertyList.self, from: data)
                 
-                print("\(property)")
+                print("\(results)")
             } else {
                 
             }
