@@ -15,7 +15,7 @@ class PropertyListCellTableViewCell: UITableViewCell {
     public static let nibName : String = "PropertyListViewCell"
     public static let height : CGFloat = 206.0
 
-    @IBOutlet weak var leftDecoratorView: UIView!
+    @IBOutlet weak var city: UILabel!
     @IBOutlet weak var propertyName: UILabel!
     @IBOutlet weak var propertyType: UILabel!
     @IBOutlet weak var propertyImage: UIImageView!
@@ -64,13 +64,14 @@ class PropertyListCellTableViewCell: UITableViewCell {
         guard let _property = property else { return }
         propertyName.text = _property.name
         propertyType.text = _property.type.description
+        city.text = "\(_property.city.name), \(_property.city.country)"
         configureImage(with: _property.images)
         if let _rating = _property.rating.overall {
             rating.text = "\(_rating)"
         } else {
             rating.text = "-"
         }
-    }
+            }
     
     /// Set image using asynclibrary for the background
     fileprivate func configureImage(with images: [PropertyImage]) {

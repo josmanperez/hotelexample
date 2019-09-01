@@ -20,14 +20,14 @@ enum PropertyType: String, Decodable {
     case guesthouse = "Guesthouse"
     
     init(rawValue: String) {
-        switch rawValue {
-        case PropertyType.hotel.rawValue:
+        switch rawValue.lowercased() {
+        case PropertyType.hotel.rawValue.lowercased():
             self = .hotel
-        case PropertyType.apartment.rawValue:
+        case PropertyType.apartment.rawValue.lowercased():
             self = .apartment
-        case PropertyType.hostal.rawValue:
+        case PropertyType.hostal.rawValue.lowercased():
             self = .hostal
-        case PropertyType.guesthouse.rawValue:
+        case PropertyType.guesthouse.rawValue.lowercased():
             self = .guesthouse
         default:
             self = .unknown
@@ -46,14 +46,13 @@ enum PropertyType: String, Decodable {
 /// Class for overall rating
 class OverallRating: Codable {
     var overall: Int?
-    var numberOfRating: Int?
+    var numberOfRatings: Int?
 }
 
 /// Class for handling the property city
 class PropertyCity: Codable {
-    var city: String?
-    var name: String?
-    var country: String?
+    var name: String
+    var country: String
 }
 
 /// Class for imagen inside property list objects
