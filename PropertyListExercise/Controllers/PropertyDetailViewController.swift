@@ -8,14 +8,13 @@
 
 import UIKit
 import Alamofire
+import MapKit
 
 class PropertyDetailViewController: UIViewController {
     
     var property: Property?
     let request = "https://private-anon-b0f95b2571-practical3.apiary-mock.com/properties/"
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var contentView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -28,7 +28,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <segue destination="HpC-5X-pPg" kind="show" identifier="showPropertyDetail" id="ins-k0-NX6"/>
+                                    <segue destination="HpC-5X-pPg" kind="show" identifier="showPropertyDetail" id="pPQ-eA-4cD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -44,7 +44,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2V-S5-sgY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="851" y="172"/>
+            <point key="canvasLocation" x="858" y="159"/>
         </scene>
         <!--Property Detail View Controller-->
         <scene sceneID="19g-Ir-lbg">
@@ -228,7 +228,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="60t-LK-LHA">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="propertyDetailImage" id="60t-LK-LHA">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -285,14 +285,10 @@
                         <viewLayoutGuide key="safeArea" id="QiI-DA-wFB"/>
                     </view>
                     <size key="freeformSize" width="375" height="1000"/>
-                    <connections>
-                        <outlet property="contentView" destination="ARu-Qm-okb" id="M8s-4C-hDc"/>
-                        <outlet property="scrollView" destination="W8C-34-cXd" id="3p6-dZ-TzS"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Dg-5E-ZMh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1884" y="171"/>
+            <point key="canvasLocation" x="1788" y="158"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tQh-Fd-M0Y">
