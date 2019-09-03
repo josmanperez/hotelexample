@@ -23,10 +23,10 @@
                             <rect key="frame" x="0.0" y="0.0" width="530" height="186"/>
                         </imageView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fZa-tF-I84">
-                            <rect key="frame" x="0.0" y="66.5" width="530" height="119.5"/>
+                            <rect key="frame" x="0.0" y="98.5" width="530" height="87.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WnC-vp-BzL">
-                                    <rect key="frame" x="8" y="10" width="514" height="99.5"/>
+                                    <rect key="frame" x="8" y="10" width="514" height="67.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Property Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrg-d6-5QQ" userLabel="PropertyName">
                                             <rect key="frame" x="0.0" y="0.0" width="514" height="21.5"/>
@@ -57,16 +57,16 @@
                                             </constraints>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yYL-jx-nkp">
-                                            <rect key="frame" x="0.0" y="49.5" width="514" height="50"/>
+                                            <rect key="frame" x="0.0" y="49.5" width="514" height="18"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFk-5n-46u" userLabel="PropertyType">
-                                                    <rect key="frame" x="0.0" y="0.0" width="514" height="50"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="514" height="18"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8N-bf-iPi" userLabel="PropertyCost">
-                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="50"/>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8N-bf-iPi" userLabel="PropertyCost">
+                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="18"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="10"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>

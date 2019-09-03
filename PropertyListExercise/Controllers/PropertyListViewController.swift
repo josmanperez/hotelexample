@@ -12,6 +12,7 @@ import Alamofire
 class PropertyListViewController: UIViewController {
     
     let activityView = UIActivityIndicatorView(style: .gray)
+    let showPropertySegue = "showPropertyDetail"
     let request = "https://private-anon-b0f95b2571-practical3.apiary-mock.com/cities/1530/properties/"
     var results: ApiPropertyList?
     
@@ -65,6 +66,10 @@ class PropertyListViewController: UIViewController {
 }
 
 extension PropertyListViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: showPropertySegue, sender: nil)
+    }
     
     
 }

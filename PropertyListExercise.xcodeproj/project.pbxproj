@@ -108,6 +108,8 @@
 		9C4D6C9C231A77A1003A66B6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9C8A09E42317029000250CC1 /* LaunchScreen.storyboard */,
+				9C8A09DC2317028F00250CC1 /* Main.storyboard */,
 				9C4D6C9D231A77BC003A66B6 /* PropertyListCellTableViewCell.swift */,
 				9C4D6C9F231A77EF003A66B6 /* PropertyListViewCell.xib */,
 			);
@@ -143,9 +145,7 @@
 				9C8A09FC2317035A00250CC1 /* Constant */,
 				9C8A09FB231702A500250CC1 /* Model */,
 				9C8A09D82317028F00250CC1 /* AppDelegate.swift */,
-				9C8A09DC2317028F00250CC1 /* Main.storyboard */,
 				9C8A09E22317029000250CC1 /* Assets.xcassets */,
-				9C8A09E42317029000250CC1 /* LaunchScreen.storyboard */,
 				9C8A09E72317029000250CC1 /* Info.plist */,
 				9C8A09DF2317028F00250CC1 /* PropertyListExercise.xcdatamodeld */,
 			);
@@ -574,7 +574,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K6T777JBJK;
 				INFOPLIST_FILE = PropertyListExercise/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = josmanperez.PropertyListExercise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -590,7 +593,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K6T777JBJK;
 				INFOPLIST_FILE = PropertyListExercise/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = josmanperez.PropertyListExercise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -606,7 +612,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K6T777JBJK;
 				INFOPLIST_FILE = PropertyListExerciseUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = josmanperez.PropertyListExerciseUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -623,7 +633,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K6T777JBJK;
 				INFOPLIST_FILE = PropertyListExerciseUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = josmanperez.PropertyListExerciseUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
