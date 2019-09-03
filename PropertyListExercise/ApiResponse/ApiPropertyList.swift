@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Class for handle API response objects of type property
 class ApiPropertyList: Decodable {
     let properties:[Property]
 }

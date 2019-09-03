@@ -21,6 +21,10 @@
 		9C8A09F12317029100250CC1 /* PropertyListExerciseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8A09F02317029100250CC1 /* PropertyListExerciseUITests.swift */; };
 		9C8A09FE2317047300250CC1 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8A09FD2317047300250CC1 /* Property.swift */; };
 		9C8A0A0023170C3C00250CC1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8A09FF23170C3C00250CC1 /* Constants.swift */; };
+		9CB3AEC1231EF4AF0096AEEB /* PropertyDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB3AEC0231EF4AF0096AEEB /* PropertyDetail.swift */; };
+		9CB3AEC3231EF62E0096AEEB /* PropertyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB3AEC2231EF62E0096AEEB /* PropertyDetailViewController.swift */; };
+		9CB3AEC5231EF86B0096AEEB /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB3AEC4231EF86B0096AEEB /* Loading.swift */; };
+		9CB3AEC7231EF9ED0096AEEB /* ApiPropertyDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CB3AEC6231EF9EC0096AEEB /* ApiPropertyDetail.swift */; };
 		FA91435D342B85D6DC9302E9 /* Pods_PropertyListExercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83327EF72ACE416DE4AE2542 /* Pods_PropertyListExercise.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +60,10 @@
 		9C8A09F22317029100250CC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C8A09FD2317047300250CC1 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		9C8A09FF23170C3C00250CC1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9CB3AEC0231EF4AF0096AEEB /* PropertyDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyDetail.swift; sourceTree = "<group>"; };
+		9CB3AEC2231EF62E0096AEEB /* PropertyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyDetailViewController.swift; sourceTree = "<group>"; };
+		9CB3AEC4231EF86B0096AEEB /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
+		9CB3AEC6231EF9EC0096AEEB /* ApiPropertyDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPropertyDetail.swift; sourceTree = "<group>"; };
 		A8ED875FF6D18EA02506DF70 /* Pods-PropertyListExerciseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PropertyListExerciseUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PropertyListExerciseUITests/Pods-PropertyListExerciseUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C1CB8ED290751210D3E20E5C /* Pods_PropertyListExerciseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PropertyListExerciseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -93,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				9C40A28923187F0600326086 /* ApiPropertyList.swift */,
+				9CB3AEC6231EF9EC0096AEEB /* ApiPropertyDetail.swift */,
 			);
 			path = ApiResponse;
 			sourceTree = "<group>";
@@ -101,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				9C8A09DA2317028F00250CC1 /* PropertyListViewController.swift */,
+				9CB3AEC2231EF62E0096AEEB /* PropertyDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -112,6 +122,7 @@
 				9C8A09DC2317028F00250CC1 /* Main.storyboard */,
 				9C4D6C9D231A77BC003A66B6 /* PropertyListCellTableViewCell.swift */,
 				9C4D6C9F231A77EF003A66B6 /* PropertyListViewCell.xib */,
+				9CB3AEC4231EF86B0096AEEB /* Loading.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -166,6 +177,7 @@
 			children = (
 				9C8A09FD2317047300250CC1 /* Property.swift */,
 				9C3B0F8A2317295000DC2865 /* PropertyImage.swift */,
+				9CB3AEC0231EF4AF0096AEEB /* PropertyDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -401,9 +413,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CB3AEC7231EF9ED0096AEEB /* ApiPropertyDetail.swift in Sources */,
 				9C8A0A0023170C3C00250CC1 /* Constants.swift in Sources */,
+				9CB3AEC1231EF4AF0096AEEB /* PropertyDetail.swift in Sources */,
 				9C8A09E12317028F00250CC1 /* PropertyListExercise.xcdatamodeld in Sources */,
+				9CB3AEC5231EF86B0096AEEB /* Loading.swift in Sources */,
 				9C4D6C9E231A77BC003A66B6 /* PropertyListCellTableViewCell.swift in Sources */,
+				9CB3AEC3231EF62E0096AEEB /* PropertyDetailViewController.swift in Sources */,
 				9C8A09DB2317028F00250CC1 /* PropertyListViewController.swift in Sources */,
 				9C40A28A23187F0600326086 /* ApiPropertyList.swift in Sources */,
 				9C8A09FE2317047300250CC1 /* Property.swift in Sources */,

@@ -59,7 +59,6 @@ class PropertyListViewController: UIViewController {
     
     func isLoading(active: Bool) {
         active ? activityView.startAnimating() : activityView.stopAnimating()
-        
     }
     
     
@@ -68,9 +67,19 @@ class PropertyListViewController: UIViewController {
 extension PropertyListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: showPropertySegue, sender: nil)
+        let property = results?.properties[indexPath.row]
+        guard let _property = property else { return }
+        performSegue(withIdentifier: showPropertySegue, sender: _property)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let _property = sender as? Property else { return }
+        if segue.identifier == showPropertySegue {
+            if let dVC = segue.destination as? PropertyDetailViewController {
+                dVC.property = _property
+            }
+        }
+    }
     
 }
 

@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="851" y="172"/>
         </scene>
-        <!--View Controller-->
+        <!--Property Detail View Controller-->
         <scene sceneID="19g-Ir-lbg">
             <objects>
-                <viewController id="HpC-5X-pPg" sceneMemberID="viewController">
+                <viewController id="HpC-5X-pPg" customClass="PropertyDetailViewController" customModule="PropertyListExercise" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HSW-f0-twr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -285,6 +285,10 @@
                         <viewLayoutGuide key="safeArea" id="QiI-DA-wFB"/>
                     </view>
                     <size key="freeformSize" width="375" height="1000"/>
+                    <connections>
+                        <outlet property="contentView" destination="ARu-Qm-okb" id="M8s-4C-hDc"/>
+                        <outlet property="scrollView" destination="W8C-34-cXd" id="3p6-dZ-TzS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Dg-5E-ZMh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
