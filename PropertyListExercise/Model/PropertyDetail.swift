@@ -24,7 +24,7 @@ class PropertyDetail: Property {
     var description: String
     var addressFirst: String?
     var addressSecond: String?
-    var policies:[String]?
+    var policies:[Policies]?
     var latitude: Double?
     var longitude: Double?
     //var mainImage: PropertyImage?
@@ -35,7 +35,14 @@ class PropertyDetail: Property {
         self.description = try container.decode(String.self, forKey: .description)
         self.addressFirst = try container.decode(String.self, forKey: .addressFirst)
         self.addressSecond = try container.decode(String.self, forKey: .addressSecond)
-        self.policies = try container.decode([String].self, forKey: .policies)
+        let _policies = try container.decode([String].self, forKey: .policies)
+        var policiesArray:[Policies] = []
+        _policies.forEach { (policy) in
+            if let _policy = Policies.init(rawValue: policy) {
+                policiesArray.append(_policy)
+            }
+        }
+        self.policies = policiesArray
         let _latitude = try container.decode(String.self, forKey: .latitude)
         self.latitude = Double(_latitude)
         let _longitude = try container.decode(String.self, forKey: .longitude)

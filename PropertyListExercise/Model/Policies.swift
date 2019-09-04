@@ -17,13 +17,25 @@ enum Policies: String {
     case noCurfew = "No Curfew"
     case nonSmoking = "Non Smoking"
     case taxesIncluded = "Taxes Included"
+    case ageRestriction = "Age Restriction"
+    case petFriendly = "Pet Friendly"
     
     public var element: (name: String, image: String) {
         switch self {
         case .childFriendly:
-            return (self.rawValue,ImagesResources.childFriendly)
-        default:
-            return ("","")
+            return (self.rawValue, ImagesResources.childFriendly)
+        case .creditCardAccepter:
+            return (self.rawValue, ImagesResources.creditCard)
+        case .noCurfew:
+            return (self.rawValue, ImagesResources.noCurfew)
+        case .nonSmoking:
+            return (self.rawValue, ImagesResources.nonSmoking)
+        case .taxesIncluded:
+            return (self.rawValue, ImagesResources.taxesIncluded)
+        case .petFriendly:
+            return (self.rawValue, ImagesResources.petFriendly)
+        case .ageRestriction:
+            return (self.rawValue, ImagesResources.ageRestriction)
         }
     }
     

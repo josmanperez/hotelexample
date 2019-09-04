@@ -284,9 +284,24 @@
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="addressLine" destination="Kcc-rF-34l" id="jE7-Kl-hGb"/>
+                        <outlet property="amenites1" destination="sxL-jQ-PRG" id="bvC-iz-IhY"/>
+                        <outlet property="amenites2" destination="Qc1-1t-Rzq" id="h5e-OV-FbK"/>
+                        <outlet property="amenites3" destination="xoS-yI-IGq" id="suQ-Bh-eYj"/>
+                        <outlet property="amenites4" destination="sPG-YG-uNk" id="KeV-Gm-fRg"/>
+                        <outlet property="amenites5" destination="PGn-ZF-kOg" id="ina-Or-rLf"/>
+                        <outlet property="amenites6" destination="rlg-c1-mSU" id="MXB-vd-PH3"/>
+                        <outlet property="amenitesLabel" destination="ZiY-Vq-9oa" id="JWP-Jm-x6n"/>
+                        <outlet property="amenitesStackView" destination="kGA-NG-cUX" id="LHQ-HO-FUJ"/>
                         <outlet property="backgrounPropertyImage" destination="Ccu-r1-7gT" id="fR9-eo-ZdA"/>
                         <outlet property="name" destination="FXf-a6-Gtt" id="nzd-7o-Dvg"/>
+                        <outlet property="nameView" destination="q2a-dA-y3W" id="ZBx-Ad-Yzb"/>
                         <outlet property="overallRating" destination="n3m-Wy-EhS" id="Sok-I2-kbV"/>
+                        <outletCollection property="amenites" destination="sxL-jQ-PRG" collectionClass="NSMutableArray" id="lzw-R1-QFD"/>
+                        <outletCollection property="amenites" destination="Qc1-1t-Rzq" collectionClass="NSMutableArray" id="qJb-bW-sci"/>
+                        <outletCollection property="amenites" destination="xoS-yI-IGq" collectionClass="NSMutableArray" id="lSC-Rc-1jl"/>
+                        <outletCollection property="amenites" destination="sPG-YG-uNk" collectionClass="NSMutableArray" id="6gP-en-rTL"/>
+                        <outletCollection property="amenites" destination="PGn-ZF-kOg" collectionClass="NSMutableArray" id="0lE-BG-Rk4"/>
+                        <outletCollection property="amenites" destination="rlg-c1-mSU" collectionClass="NSMutableArray" id="Kfe-t0-Mpe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Dg-5E-ZMh" userLabel="First Responder" sceneMemberID="firstResponder"/>

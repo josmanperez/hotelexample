@@ -18,4 +18,11 @@ enum PropertyTypeKey {
 struct ImagesResources {
     static let propertyDefault = "propertyListDefault"
     static let childFriendly = "babyBoy"
+    static let creditCard = "debitCard"
+    static let nonSmoking = "nonSmoking"
+    static let noCurfew = "noCurfew"
+    static let taxesIncluded = "taxesIncluded"
+    static let ageRestriction = "ageRestriction"
+    static let petFriendly = "petFriendly"
+    
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		69384F523B232E62C6CACE2C /* Pods_PropertyListExerciseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1CB8ED290751210D3E20E5C /* Pods_PropertyListExerciseUITests.framework */; };
 		9C03937F2320410C007A90AE /* Policies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C03937E2320410C007A90AE /* Policies.swift */; };
+		9C03938223204D06007A90AE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C03938123204D06007A90AE /* Extensions.swift */; };
 		9C40A28A23187F0600326086 /* ApiPropertyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C40A28923187F0600326086 /* ApiPropertyList.swift */; };
 		9C4D6C9E231A77BC003A66B6 /* PropertyListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D6C9D231A77BC003A66B6 /* PropertyListCellTableViewCell.swift */; };
 		9C4D6CA0231A77EF003A66B6 /* PropertyListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C4D6C9F231A77EF003A66B6 /* PropertyListViewCell.xib */; };
@@ -43,6 +44,7 @@
 		83327EF72ACE416DE4AE2542 /* Pods_PropertyListExercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PropertyListExercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8462C549861D3815B2DFC8B0 /* Pods-PropertyListExercise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PropertyListExercise.release.xcconfig"; path = "Pods/Target Support Files/Pods-PropertyListExercise/Pods-PropertyListExercise.release.xcconfig"; sourceTree = "<group>"; };
 		9C03937E2320410C007A90AE /* Policies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Policies.swift; sourceTree = "<group>"; };
+		9C03938123204D06007A90AE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9C40A28923187F0600326086 /* ApiPropertyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPropertyList.swift; sourceTree = "<group>"; };
 		9C4D6C9D231A77BC003A66B6 /* PropertyListCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListCellTableViewCell.swift; sourceTree = "<group>"; };
 		9C4D6C9F231A77EF003A66B6 /* PropertyListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PropertyListViewCell.xib; sourceTree = "<group>"; };
@@ -93,6 +95,14 @@
 				C1CB8ED290751210D3E20E5C /* Pods_PropertyListExerciseUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C03938023204CF4007A90AE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9C03938123204D06007A90AE /* Extensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		9C40A28B23187F0D00326086 /* ApiResponse */ = {
@@ -148,6 +158,7 @@
 		9C8A09D72317028F00250CC1 /* PropertyListExercise */ = {
 			isa = PBXGroup;
 			children = (
+				9C03938023204CF4007A90AE /* Helpers */,
 				9C4D6C9C231A77A1003A66B6 /* View */,
 				9C4D6C9B231A6FDF003A66B6 /* Controllers */,
 				9C40A28B23187F0D00326086 /* ApiResponse */,
@@ -417,6 +428,7 @@
 				9C4D6C9E231A77BC003A66B6 /* PropertyListCellTableViewCell.swift in Sources */,
 				9CB3AEC3231EF62E0096AEEB /* PropertyDetailViewController.swift in Sources */,
 				9C8A09DB2317028F00250CC1 /* PropertyListViewController.swift in Sources */,
+				9C03938223204D06007A90AE /* Extensions.swift in Sources */,
 				9C40A28A23187F0600326086 /* ApiPropertyList.swift in Sources */,
 				9C8A09FE2317047300250CC1 /* Property.swift in Sources */,
 				9C03937F2320410C007A90AE /* Policies.swift in Sources */,

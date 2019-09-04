@@ -20,7 +20,17 @@ class PropertyDetailViewController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var overallRating: UILabel!
     @IBOutlet weak var addressLine: UILabel!
+    @IBOutlet weak var nameView: UIView!
     
+    @IBOutlet weak var amenitesLabel: UILabel!
+    @IBOutlet weak var amenitesStackView: UIStackView!
+    @IBOutlet var amenites:[UIImageView]?
+    @IBOutlet weak var amenites1: UIImageView!
+    @IBOutlet weak var amenites2: UIImageView!
+    @IBOutlet weak var amenites3: UIImageView!
+    @IBOutlet weak var amenites4: UIImageView!
+    @IBOutlet weak var amenites5: UIImageView!
+    @IBOutlet weak var amenites6: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +62,7 @@ class PropertyDetailViewController: UIViewController {
     
     func configurePropertyDetailView(propertyDetail: ApiPropertyDetail) {
         
+        self.nameView.roundedTopCornersView()
         if let _images = property?.images {
             configureImage(with: _images)
         }
@@ -61,9 +72,21 @@ class PropertyDetailViewController: UIViewController {
         } else {
             self.overallRating.text = "-"
         }
-        
         configureAddress(propertyDetail: propertyDetail)
+        configureAmenites(propertyDetail: propertyDetail)
         
+    }
+    
+    fileprivate func configureAmenites(propertyDetail: PropertyDetail) {
+        guard let _policites = propertyDetail.policies, let _amenitesImage = amenites else {
+            amenitesStackView.isHidden = true
+            return
+        }
+        for (index, policy) in _policites.enumerated() {
+            if index < _amenitesImage.count {
+                _amenitesImage[index].image = UIImage(named: policy.element.image)
+            }
+        }
     }
     
     fileprivate func configureAddress(propertyDetail: PropertyDetail) {
