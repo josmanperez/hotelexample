@@ -20,17 +20,13 @@ class PropertyDetailViewController: UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var overallRating: UILabel!
     @IBOutlet weak var addressLine: UILabel!
+    @IBOutlet weak var addressLocation: UILabel!
     @IBOutlet weak var nameView: UIView!
     
     @IBOutlet weak var amenitesLabel: UILabel!
     @IBOutlet weak var amenitesStackView: UIStackView!
     @IBOutlet var amenites:[UIImageView]?
-    @IBOutlet weak var amenites1: UIImageView!
-    @IBOutlet weak var amenites2: UIImageView!
-    @IBOutlet weak var amenites3: UIImageView!
-    @IBOutlet weak var amenites4: UIImageView!
-    @IBOutlet weak var amenites5: UIImageView!
-    @IBOutlet weak var amenites6: UIImageView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,28 +78,41 @@ class PropertyDetailViewController: UIViewController {
             amenitesStackView.isHidden = true
             return
         }
-        for (index, policy) in _policites.enumerated() {
-            if index < _amenitesImage.count {
+        var index:Int = 0
+        for (_index, policy) in _policites.enumerated() {
+            if _index < _amenitesImage.count {
                 _amenitesImage[index].image = UIImage(named: policy.element.image)
             }
+            index = _index
+        }
+        for i in index..<_amenitesImage.count {
+            _amenitesImage[i].isHidden = true
         }
     }
     
     fileprivate func configureAddress(propertyDetail: PropertyDetail) {
         var direction = ""
+        var location = ""
         
         if let _addressFirst = propertyDetail.addressFirst, !_addressFirst.isEmpty {
-            direction = "\(_addressFirst), "
+            direction = "\(_addressFirst)"
         }
         if let _addressSecond = propertyDetail.addressSecond, !_addressSecond.isEmpty {
-            direction += "\(_addressSecond), "
+            direction += ", \(_addressSecond)"
         }
         if let _city = property?.location.city, !_city.isEmpty {
-            direction += "\(_city), "
+            location = "\(_city)"
         }
-        addressLine.text = "\(direction) \(property?.location.country ?? "")"
+        if let _country = property?.location.country, !_country.isEmpty {
+            location += ", \(_country)"
+        }
+        addressLine.text = "\(direction)"
         if addressLine.text?.count == 0 || addressLine.text?.isEmpty ?? true {
             addressLine.isHidden = true
+        }
+        addressLocation.text = "\(location)"
+        if addressLocation.text?.count == 0 || addressLocation.text?.isEmpty ?? true {
+            addressLocation.isHidden = true
         }
     }
     

@@ -68,10 +68,10 @@
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q2a-dA-y3W" userLabel="Name View">
-                                                <rect key="frame" x="8" y="186.5" width="359" height="63.5"/>
+                                                <rect key="frame" x="8" y="159.5" width="359" height="90.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="v8M-SM-HZH">
-                                                        <rect key="frame" x="8" y="8" width="343" height="47.5"/>
+                                                        <rect key="frame" x="8" y="8" width="343" height="74.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ceU-Hf-J8G">
                                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
@@ -104,6 +104,12 @@
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dirección del hotel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kcc-rF-34l">
                                                                 <rect key="frame" x="0.0" y="30.5" width="343" height="17"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dirección del hotel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acO-Y6-fbo">
+                                                                <rect key="frame" x="0.0" y="57.5" width="111.5" height="17"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -284,12 +290,7 @@
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="addressLine" destination="Kcc-rF-34l" id="jE7-Kl-hGb"/>
-                        <outlet property="amenites1" destination="sxL-jQ-PRG" id="bvC-iz-IhY"/>
-                        <outlet property="amenites2" destination="Qc1-1t-Rzq" id="h5e-OV-FbK"/>
-                        <outlet property="amenites3" destination="xoS-yI-IGq" id="suQ-Bh-eYj"/>
-                        <outlet property="amenites4" destination="sPG-YG-uNk" id="KeV-Gm-fRg"/>
-                        <outlet property="amenites5" destination="PGn-ZF-kOg" id="ina-Or-rLf"/>
-                        <outlet property="amenites6" destination="rlg-c1-mSU" id="MXB-vd-PH3"/>
+                        <outlet property="addressLocation" destination="acO-Y6-fbo" id="DEa-YJ-NsO"/>
                         <outlet property="amenitesLabel" destination="ZiY-Vq-9oa" id="JWP-Jm-x6n"/>
                         <outlet property="amenitesStackView" destination="kGA-NG-cUX" id="LHQ-HO-FUJ"/>
                         <outlet property="backgrounPropertyImage" destination="Ccu-r1-7gT" id="fR9-eo-ZdA"/>
@@ -306,7 +307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Dg-5E-ZMh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1788" y="158"/>
+            <point key="canvasLocation" x="1788" y="157.42128935532236"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tQh-Fd-M0Y">
