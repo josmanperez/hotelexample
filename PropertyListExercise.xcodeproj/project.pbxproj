@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		69384F523B232E62C6CACE2C /* Pods_PropertyListExerciseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1CB8ED290751210D3E20E5C /* Pods_PropertyListExerciseUITests.framework */; };
-		9C3B0F8B2317295000DC2865 /* PropertyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3B0F8A2317295000DC2865 /* PropertyImage.swift */; };
+		9C03937F2320410C007A90AE /* Policies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C03937E2320410C007A90AE /* Policies.swift */; };
 		9C40A28A23187F0600326086 /* ApiPropertyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C40A28923187F0600326086 /* ApiPropertyList.swift */; };
 		9C4D6C9E231A77BC003A66B6 /* PropertyListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D6C9D231A77BC003A66B6 /* PropertyListCellTableViewCell.swift */; };
 		9C4D6CA0231A77EF003A66B6 /* PropertyListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C4D6C9F231A77EF003A66B6 /* PropertyListViewCell.xib */; };
@@ -42,7 +42,7 @@
 		80846736DFE051BE20A6B1EC /* Pods-PropertyListExercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PropertyListExercise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PropertyListExercise/Pods-PropertyListExercise.debug.xcconfig"; sourceTree = "<group>"; };
 		83327EF72ACE416DE4AE2542 /* Pods_PropertyListExercise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PropertyListExercise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8462C549861D3815B2DFC8B0 /* Pods-PropertyListExercise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PropertyListExercise.release.xcconfig"; path = "Pods/Target Support Files/Pods-PropertyListExercise/Pods-PropertyListExercise.release.xcconfig"; sourceTree = "<group>"; };
-		9C3B0F8A2317295000DC2865 /* PropertyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyImage.swift; sourceTree = "<group>"; };
+		9C03937E2320410C007A90AE /* Policies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Policies.swift; sourceTree = "<group>"; };
 		9C40A28923187F0600326086 /* ApiPropertyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPropertyList.swift; sourceTree = "<group>"; };
 		9C4D6C9D231A77BC003A66B6 /* PropertyListCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListCellTableViewCell.swift; sourceTree = "<group>"; };
 		9C4D6C9F231A77EF003A66B6 /* PropertyListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PropertyListViewCell.xib; sourceTree = "<group>"; };
@@ -173,8 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				9C8A09FD2317047300250CC1 /* Property.swift */,
-				9C3B0F8A2317295000DC2865 /* PropertyImage.swift */,
 				9CB3AEC0231EF4AF0096AEEB /* PropertyDetail.swift */,
+				9C03937E2320410C007A90AE /* Policies.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -419,7 +419,7 @@
 				9C8A09DB2317028F00250CC1 /* PropertyListViewController.swift in Sources */,
 				9C40A28A23187F0600326086 /* ApiPropertyList.swift in Sources */,
 				9C8A09FE2317047300250CC1 /* Property.swift in Sources */,
-				9C3B0F8B2317295000DC2865 /* PropertyImage.swift in Sources */,
+				9C03937F2320410C007A90AE /* Policies.swift in Sources */,
 				9C8A09D92317028F00250CC1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

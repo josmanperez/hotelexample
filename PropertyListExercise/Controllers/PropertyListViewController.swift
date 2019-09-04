@@ -35,12 +35,12 @@ class PropertyListViewController: UIViewController {
             
             if response.result.isSuccess {
                 guard let data = response.data else { return }
-                print("JSON: \((response.result.value) ?? "Error")")
+                //print("JSON: \((response.result.value) ?? "Error")")
                 
                 let decoder = JSONDecoder()
                 self.results = try! decoder.decode(ApiPropertyList.self, from: data)
                 
-                print("\(String(describing: self.results))")
+                //print("\(String(describing: self.results))")
             
                 self.tableView.reloadData()
                 
@@ -94,7 +94,7 @@ extension PropertyListViewController: UITableViewDataSource {
         let property = results?.properties[indexPath.row]
         if let cell = tableView.dequeueReusableCell(withIdentifier: PropertyListCellTableViewCell.reuseIdentifier, for: indexPath) as? PropertyListCellTableViewCell {
             cell.property = property
-            cell.backgroundColor = UIColor.clear
+            cell.selectionStyle = .none
             cell.configureCell()
             return cell
         } else {

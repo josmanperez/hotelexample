@@ -63,9 +63,9 @@ class PropertyListCellTableViewCell: UITableViewCell {
         guard let _property = property else { return }
         propertyName.text = _property.name
         propertyType.text = _property.type.description
-        city.text = "\(_property.city.name), \(_property.city.country)"
+        city.text = "\(_property.location.city), \(_property.location.country)"
         configureImage(with: _property.images)
-        if let _rating = _property.rating.overall {
+        if let _rating = _property.rating?.overall {
             rating.text = "\(_rating)"
         } else {
             rating.text = "-"
@@ -74,7 +74,7 @@ class PropertyListCellTableViewCell: UITableViewCell {
     
     /// Set image using asynclibrary for the background
     fileprivate func configureImage(with images: [PropertyImage]) {
-        if !images.isEmpty, let imageResource = images.randomElement() {
+        if !images.isEmpty, let imageResource = images.first {
             let urlString = "\(imageResource.prefix)\(imageResource.suffix)"
             let url = URL(string: urlString)
             propertyImage.kf.indicatorType = .activity

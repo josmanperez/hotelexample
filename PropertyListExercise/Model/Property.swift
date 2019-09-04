@@ -51,7 +51,12 @@ class OverallRating: Codable {
 
 /// Class for handling the property city
 class PropertyCity: Codable {
-    var name: String
+    enum CodingKeys: String, CodingKey {
+        case city = "name"
+        case country
+    }
+    
+    var city: String
     var country: String
 }
 
@@ -62,7 +67,7 @@ class PropertyImage: Codable {
 }
 
 /// Class property to handle list of property objects
-struct Property: Decodable {
+class Property: Decodable {
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -70,14 +75,14 @@ struct Property: Decodable {
         case type
         case rating = "overallRating"
         case images
-        case city
+        case location = "city"
     }
     
     var id: String
     var name: String
-    var rating: OverallRating
+    var rating: OverallRating?
     var type: PropertyType
-    var city: PropertyCity
+    var location: PropertyCity
     var images:[PropertyImage]
     
 }

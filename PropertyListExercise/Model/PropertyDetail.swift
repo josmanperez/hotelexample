@@ -9,12 +9,39 @@
 import Foundation
 
 /// class for storing detail of properties
-class PropertyDetail: Decodable {
+class PropertyDetail: Property {
+    
+    enum PropertyDetailCodingKeys: String, CodingKey {
+        case description
+        case detailImages = "images"
+        case addressFirst = "address1"
+        case addressSecond = "address2"
+        case policies
+        case latitude
+        case longitude
+    }
     
     var description: String
-    //var latitude: Double?
-    //var longitude: Double?
+    var addressFirst: String?
+    var addressSecond: String?
+    var policies:[String]?
+    var latitude: Double?
+    var longitude: Double?
     //var mainImage: PropertyImage?
-    var images:[PropertyImage]
+    var detailImages:[PropertyImage]
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: PropertyDetailCodingKeys.self)
+        self.description = try container.decode(String.self, forKey: .description)
+        self.addressFirst = try container.decode(String.self, forKey: .addressFirst)
+        self.addressSecond = try container.decode(String.self, forKey: .addressSecond)
+        self.policies = try container.decode([String].self, forKey: .policies)
+        let _latitude = try container.decode(String.self, forKey: .latitude)
+        self.latitude = Double(_latitude)
+        let _longitude = try container.decode(String.self, forKey: .longitude)
+        self.longitude = Double(_longitude)
+        self.detailImages = try container.decode([PropertyImage].self, forKey: .detailImages)
+        try super.init(from: decoder)
+    }
     
 }
