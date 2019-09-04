@@ -26,7 +26,8 @@ class PropertyDetailViewController: UIViewController {
     @IBOutlet weak var amenitesLabel: UILabel!
     @IBOutlet weak var amenitesStackView: UIStackView!
     @IBOutlet var amenites:[UIImageView]?
-
+    @IBOutlet weak var amenitesAndDetailView: UIView!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +71,10 @@ class PropertyDetailViewController: UIViewController {
         }
         configureAddress(propertyDetail: propertyDetail)
         configureAmenites(propertyDetail: propertyDetail)
-        
+        descriptionLabel.text = propertyDetail.description
+        amenitesAndDetailView.layoutIfNeeded()
+        amenitesAndDetailView.roundedBottomCornersView()
+
     }
     
     fileprivate func configureAmenites(propertyDetail: PropertyDetail) {
