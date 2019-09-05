@@ -227,7 +227,7 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="H9h-2N-X0c">
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="H9h-2N-X0c">
                                                         <rect key="frame" x="0.0" y="23.5" width="360" height="150"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -314,6 +314,7 @@
                         <outlet property="name" destination="FXf-a6-Gtt" id="nzd-7o-Dvg"/>
                         <outlet property="nameView" destination="q2a-dA-y3W" id="ZBx-Ad-Yzb"/>
                         <outlet property="overallRating" destination="n3m-Wy-EhS" id="Sok-I2-kbV"/>
+                        <outlet property="propertyMap" destination="McI-TG-O8D" id="Hiu-4m-9Dq"/>
                         <outletCollection property="amenites" destination="sxL-jQ-PRG" collectionClass="NSMutableArray" id="lzw-R1-QFD"/>
                         <outletCollection property="amenites" destination="Qc1-1t-Rzq" collectionClass="NSMutableArray" id="qJb-bW-sci"/>
                         <outletCollection property="amenites" destination="xoS-yI-IGq" collectionClass="NSMutableArray" id="lSC-Rc-1jl"/>

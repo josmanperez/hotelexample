@@ -8,6 +8,8 @@
 
 import UIKit
 
+/// Class for creating, starting and stoping an activity indicator in
+/// any view
 open class Loading {
     
     internal static var spinner: UIActivityIndicatorView?
@@ -17,7 +19,9 @@ open class Loading {
     public static var baseBackColor = UIColor.black.withAlphaComponent(0.5)
     public static var baseColor = UIColor.black
     
-    
+    /// Function for starting an activity indicator.
+    /// - Parameter frame: Frame for the activity indicator bounds
+    /// - Returns: UIView with the activity indicator center on it
     public static func starts(frame: CGRect) -> UIView? {
         if spinnerView == nil {
             spinnerView = UIView(frame: frame)
@@ -35,8 +39,8 @@ open class Loading {
         return spinnerView
     }
     
+    /// Stops the activity indicator
     public static func stop() {
-
         if let _spinnerView = spinnerView {
             UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations: {
                 _spinnerView.alpha = 0

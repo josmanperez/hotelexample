@@ -39,13 +39,18 @@ class PropertyDetailViewController: UIViewController {
                                              right: 0.0)
     fileprivate let numberOfItems:CGFloat = 2
     
+    @IBOutlet weak var propertyMap: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = property?.name
         
         let nibCell = UINib(nibName: ImageCollectionViewCell.nibName, bundle: nil)
         collectionViewImages.register(nibCell, forCellWithReuseIdentifier: collectionCellReuseIdentifier)
         
         startActivityIndicator()
+        
         if let _id = property?.id {
             Alamofire.request("\(request)\(_id)").responseJSON { response in
                 
@@ -58,6 +63,7 @@ class PropertyDetailViewController: UIViewController {
                     let result = try! decoder.decode(ApiPropertyDetail.self, from: data)
                     self.propertyDetail = result
                     self.configurePropertyDetailView(propertyDetail: result)
+                    self.configureMap(with: result)
                     self.collectionViewImages.reloadData()
 
                 } else {
@@ -70,6 +76,39 @@ class PropertyDetailViewController: UIViewController {
     }
     
     // - MARK: Configure Views
+    
+    func configureMap(with propertyDetail: ApiPropertyDetail) {
+        guard let _latitude = propertyDetail.latitude, let _longitude = propertyDetail.longitude else {
+            let view = UIView(frame: propertyMap.frame)
+            view.translatesAutoresizingMaskIntoConstraints = false
+            view.backgroundColor = UIColor.white
+            view.alpha = 0.8
+            let label = UILabel()
+            label.text = "No property location found"
+            label.font = UIFont(name: "Helvetica-Neue", size: 5)
+            view.addSubview(label)
+            label.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint(item: label, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: label, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
+            propertyMap.addSubview(view)
+            NSLayoutConstraint(item: view, attribute: .leading, relatedBy: .equal, toItem: propertyMap, attribute: .leading, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: .equal, toItem: propertyMap, attribute: .trailing, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: propertyMap, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: propertyMap, attribute: .top, multiplier: 1, constant: 0).isActive = true
+            return
+        }
+        // set initial location in Honolulu
+        let location = CLLocation(latitude: _latitude, longitude: _longitude)
+        let regionRadius: CLLocationDistance = 1000
+        func centerMapOnLocation(location: CLLocation) {
+            let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
+                                                      latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+            propertyMap.setRegion(coordinateRegion, animated: true)
+        }
+        centerMapOnLocation(location: location)
+        let artwork = MapHelper(title: propertyDetail.name, rating: property?.rating, coordinate: CLLocationCoordinate2D(latitude: _latitude, longitude: _longitude))
+        propertyMap.addAnnotation(artwork)
+    }
     
     func configurePropertyDetailView(propertyDetail: ApiPropertyDetail) {
         
