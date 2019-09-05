@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--BOOKING EXERCISE-->
         <scene sceneID="3sr-V6-TOd">
             <objects>
                 <tableViewController id="buS-Wo-Rt2" customClass="PropertyListViewController" customModule="PropertyListExercise" customModuleProvider="target" sceneMemberID="viewController">
@@ -37,7 +37,7 @@
                             <outlet property="delegate" destination="buS-Wo-Rt2" id="LRL-An-SEL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="2f4-vT-zrh"/>
+                    <navigationItem key="navigationItem" title="BOOKING EXERCISE" id="2f4-vT-zrh"/>
                     <connections>
                         <outlet property="tableView" destination="67S-vN-pAg" id="n9I-xG-krf"/>
                     </connections>
@@ -212,14 +212,26 @@
                                                     <constraint firstAttribute="trailing" secondItem="21a-mx-t2m" secondAttribute="trailing" constant="8" id="zFr-k8-d5Q"/>
                                                 </constraints>
                                             </view>
-                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="McI-TG-O8D">
-                                                <rect key="frame" x="8" y="489" width="360" height="130"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Xz-JW-5xN" userLabel="mapView">
+                                                <rect key="frame" x="8" y="489" width="360" height="142"/>
+                                                <subviews>
+                                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="McI-TG-O8D">
+                                                        <rect key="frame" x="0.0" y="0.0" width="360" height="142"/>
+                                                    </mapView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="130" id="RRb-TJ-CnG"/>
+                                                    <constraint firstAttribute="bottom" secondItem="McI-TG-O8D" secondAttribute="bottom" id="Qtb-CA-gSS"/>
+                                                    <constraint firstAttribute="trailing" secondItem="McI-TG-O8D" secondAttribute="trailing" id="WCG-u8-t6z"/>
+                                                    <constraint firstAttribute="height" constant="142" id="ZHR-nO-JVu"/>
+                                                    <constraint firstItem="McI-TG-O8D" firstAttribute="centerX" secondItem="4Xz-JW-5xN" secondAttribute="centerX" id="jbW-Zy-ye5"/>
+                                                    <constraint firstItem="McI-TG-O8D" firstAttribute="top" secondItem="4Xz-JW-5xN" secondAttribute="top" id="r0V-fV-h81"/>
+                                                    <constraint firstItem="McI-TG-O8D" firstAttribute="leading" secondItem="4Xz-JW-5xN" secondAttribute="leading" id="vs6-cf-QF3"/>
+                                                    <constraint firstItem="McI-TG-O8D" firstAttribute="centerY" secondItem="4Xz-JW-5xN" secondAttribute="centerY" id="xQ4-an-fli"/>
                                                 </constraints>
-                                            </mapView>
+                                            </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="85p-NT-kT0">
-                                                <rect key="frame" x="8" y="634" width="360" height="173.5"/>
+                                                <rect key="frame" x="8" y="639" width="360" height="173.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Images" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kt3-sX-hen">
                                                         <rect key="frame" x="0.0" y="0.0" width="360" height="15.5"/>
@@ -259,24 +271,24 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstItem="McI-TG-O8D" firstAttribute="leading" secondItem="ARu-Qm-okb" secondAttribute="leading" constant="8" id="180-fm-NTX"/>
                                             <constraint firstItem="L7s-Cx-zcW" firstAttribute="leading" secondItem="ARu-Qm-okb" secondAttribute="leading" constant="8" id="4XD-03-CAP"/>
-                                            <constraint firstItem="85p-NT-kT0" firstAttribute="top" secondItem="McI-TG-O8D" secondAttribute="bottom" constant="15" id="8GS-Y0-vxH"/>
                                             <constraint firstItem="Ccu-r1-7gT" firstAttribute="top" secondItem="ARu-Qm-okb" secondAttribute="top" id="8Vm-KA-Dv8"/>
                                             <constraint firstItem="Ccu-r1-7gT" firstAttribute="leading" secondItem="ARu-Qm-okb" secondAttribute="leading" id="E6U-vy-sHo"/>
+                                            <constraint firstItem="4Xz-JW-5xN" firstAttribute="leading" secondItem="ARu-Qm-okb" secondAttribute="leading" constant="8" id="Ije-u8-Z7P"/>
+                                            <constraint firstAttribute="trailing" secondItem="4Xz-JW-5xN" secondAttribute="trailing" constant="8" id="LOW-Vt-8J7"/>
                                             <constraint firstAttribute="trailing" secondItem="q2a-dA-y3W" secondAttribute="trailing" constant="8" id="MCl-as-owV"/>
-                                            <constraint firstItem="McI-TG-O8D" firstAttribute="top" secondItem="L7s-Cx-zcW" secondAttribute="bottom" constant="8" id="Mdz-IX-4ml"/>
                                             <constraint firstItem="L7s-Cx-zcW" firstAttribute="top" secondItem="Ccu-r1-7gT" secondAttribute="bottom" id="O15-Ro-zOh"/>
                                             <constraint firstItem="q2a-dA-y3W" firstAttribute="leading" secondItem="L7s-Cx-zcW" secondAttribute="leading" id="ODM-ek-FaV"/>
                                             <constraint firstAttribute="trailing" secondItem="Ccu-r1-7gT" secondAttribute="trailing" id="PEJ-sg-JNu"/>
                                             <constraint firstItem="L7s-Cx-zcW" firstAttribute="top" secondItem="q2a-dA-y3W" secondAttribute="bottom" id="SQH-Sw-VNZ"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="85p-NT-kT0" secondAttribute="bottom" constant="20" id="VKl-uX-BMj"/>
-                                            <constraint firstAttribute="trailing" secondItem="McI-TG-O8D" secondAttribute="trailing" constant="8" id="XuS-Z0-3iu"/>
+                                            <constraint firstItem="85p-NT-kT0" firstAttribute="top" secondItem="4Xz-JW-5xN" secondAttribute="bottom" constant="8" symbolic="YES" id="caq-2V-s2i"/>
+                                            <constraint firstItem="4Xz-JW-5xN" firstAttribute="top" secondItem="L7s-Cx-zcW" secondAttribute="bottom" constant="8" symbolic="YES" id="fVu-5g-6DT"/>
                                             <constraint firstItem="85p-NT-kT0" firstAttribute="leading" secondItem="ARu-Qm-okb" secondAttribute="leading" constant="8" id="iLg-Nq-7De"/>
                                             <constraint firstAttribute="trailing" secondItem="L7s-Cx-zcW" secondAttribute="trailing" constant="8" id="ndI-WJ-kid"/>
                                             <constraint firstItem="q2a-dA-y3W" firstAttribute="leading" secondItem="ARu-Qm-okb" secondAttribute="leading" constant="8" id="nkT-NV-MQ6"/>
+                                            <constraint firstItem="4Xz-JW-5xN" firstAttribute="top" secondItem="L7s-Cx-zcW" secondAttribute="bottom" constant="8" symbolic="YES" id="tX8-iv-mQZ"/>
                                             <constraint firstItem="q2a-dA-y3W" firstAttribute="bottom" secondItem="Ccu-r1-7gT" secondAttribute="bottom" id="uCr-78-cXt"/>
-                                            <constraint firstItem="q2a-dA-y3W" firstAttribute="leading" secondItem="McI-TG-O8D" secondAttribute="leading" id="zGG-a3-zka"/>
                                             <constraint firstAttribute="trailing" secondItem="85p-NT-kT0" secondAttribute="trailing" constant="8" id="zOl-uY-RT6"/>
                                         </constraints>
                                     </view>
@@ -311,6 +323,7 @@
                         <outlet property="backgrounPropertyImage" destination="Ccu-r1-7gT" id="fR9-eo-ZdA"/>
                         <outlet property="collectionViewImages" destination="H9h-2N-X0c" id="NYz-aX-gvB"/>
                         <outlet property="descriptionLabel" destination="21a-mx-t2m" id="Uml-IA-CuK"/>
+                        <outlet property="mapView" destination="4Xz-JW-5xN" id="N2H-m7-qg5"/>
                         <outlet property="name" destination="FXf-a6-Gtt" id="nzd-7o-Dvg"/>
                         <outlet property="nameView" destination="q2a-dA-y3W" id="ZBx-Ad-Yzb"/>
                         <outlet property="overallRating" destination="n3m-Wy-EhS" id="Sok-I2-kbV"/>
@@ -331,9 +344,11 @@
         <scene sceneID="tQh-Fd-M0Y">
             <objects>
                 <navigationController id="Air-2b-Udd" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GaH-PJ-Szb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="GaH-PJ-Szb">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.89411764709999997" green="0.2470588235" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="buS-Wo-Rt2" kind="relationship" relationship="rootViewController" id="B8s-y7-5vQ"/>

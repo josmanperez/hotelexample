@@ -49,11 +49,7 @@ class PropertyListCellTableViewCell: UITableViewCell {
     
     /// Method to configure the tableViewCell itself
     fileprivate func configureView() {
-        self.propertyListView.layer.cornerRadius = 5.0
-        self.propertyListView.layer.borderWidth = 1.0
-        self.propertyListView.layer.borderColor = UIColor.clear.cgColor
-        self.propertyListView.layer.masksToBounds = true
-        self.propertyListView.layer.masksToBounds = false
+        self.propertyListView.roundedCornersView()
     }
     
     

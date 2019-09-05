@@ -39,6 +39,7 @@ class PropertyDetailViewController: UIViewController {
                                              right: 0.0)
     fileprivate let numberOfItems:CGFloat = 2
     
+    @IBOutlet weak var mapView: UIView!
     @IBOutlet weak var propertyMap: MKMapView!
     
     override func viewDidLoad() {
@@ -114,7 +115,6 @@ class PropertyDetailViewController: UIViewController {
                 NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: self.propertyMap, attribute: .top, multiplier: 1, constant: 0).isActive = true
                 return
             }
-            // set initial location in Honolulu
             let location = CLLocation(latitude: _latitude, longitude: _longitude)
             let artwork = MapHelper(title: propertyDetail.name, rating: self.property?.rating, coordinate: CLLocationCoordinate2D(latitude: _latitude, longitude: _longitude))
             DispatchQueue.main.async { [weak self] in
