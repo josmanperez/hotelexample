@@ -82,15 +82,11 @@ class PropertyDetailViewController: UIViewController {
             amenitesStackView.isHidden = true
             return
         }
-        var index:Int = 0
+
         for (_index, policy) in _policites.enumerated() {
             if _index < _amenitesImage.count {
-                _amenitesImage[index].image = UIImage(named: policy.element.image)
+                _amenitesImage[_index].image = UIImage(named: policy.element.image)
             }
-            index = _index
-        }
-        for i in index..<_amenitesImage.count {
-            _amenitesImage[i].isHidden = true
         }
     }
     
