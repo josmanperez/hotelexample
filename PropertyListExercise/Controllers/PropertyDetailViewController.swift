@@ -34,10 +34,10 @@ class PropertyDetailViewController: UIViewController {
     
     @IBOutlet weak var collectionViewImages: UICollectionView!
     fileprivate let sectionInsets = UIEdgeInsets(top: 0.0,
-                                             left: 10.0,
+                                             left: 0.0,
                                              bottom: 00.0,
-                                             right: 10.0)
-    fileprivate let numberOfItems:CGFloat = 3
+                                             right: 0.0)
+    fileprivate let numberOfItems:CGFloat = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
