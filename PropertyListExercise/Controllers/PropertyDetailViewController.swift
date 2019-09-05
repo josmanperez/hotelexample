@@ -13,7 +13,10 @@ import Kingfisher
 
 class PropertyDetailViewController: UIViewController {
     
+    let collectionCellReuseIdentifier = "propertyDetailImage"
     var property: Property?
+    var propertyDetail: PropertyDetail?
+    
     let request = "https://private-anon-b0f95b2571-practical3.apiary-mock.com/properties/"
     
     @IBOutlet weak var backgrounPropertyImage: UIImageView!
@@ -29,8 +32,18 @@ class PropertyDetailViewController: UIViewController {
     @IBOutlet weak var amenitesAndDetailView: UIView!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    @IBOutlet weak var collectionViewImages: UICollectionView!
+    fileprivate let sectionInsets = UIEdgeInsets(top: 0.0,
+                                             left: 10.0,
+                                             bottom: 00.0,
+                                             right: 10.0)
+    fileprivate let numberOfItems:CGFloat = 3
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let nibCell = UINib(nibName: ImageCollectionViewCell.nibName, bundle: nil)
+        collectionViewImages.register(nibCell, forCellWithReuseIdentifier: collectionCellReuseIdentifier)
         
         startActivityIndicator()
         if let _id = property?.id {
@@ -43,8 +56,9 @@ class PropertyDetailViewController: UIViewController {
                     
                     let decoder = JSONDecoder()
                     let result = try! decoder.decode(ApiPropertyDetail.self, from: data)
-                    
+                    self.propertyDetail = result
                     self.configurePropertyDetailView(propertyDetail: result)
+                    self.collectionViewImages.reloadData()
 
                 } else {
                     
@@ -149,3 +163,60 @@ class PropertyDetailViewController: UIViewController {
     }
 
 }
+
+extension PropertyDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let _index = propertyDetail?.images.count else {
+            return 0
+        }
+        return _index
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionCellReuseIdentifier, for: indexPath) as? ImageCollectionViewCell {
+            
+            guard let _images = propertyDetail?.images else {
+                collectionViewImages.isHidden = true
+                return cell
+            }
+            let imageResource = _images[indexPath.row]
+            let urlString = "\(imageResource.prefix)\(imageResource.suffix)"
+            let url = URL(string: urlString)
+            cell.configure(with: url!)
+            return cell
+        } else {
+            return collectionView.dequeueReusableCell(withReuseIdentifier: collectionCellReuseIdentifier, for: indexPath)
+        }
+        
+    }
+    
+}
+
+extension PropertyDetailViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+      
+        
+        let witdh = (collectionView.frame.width - (sectionInsets.left + sectionInsets.right)) / numberOfItems
+        
+        return CGSize(width: witdh, height: collectionView.frame.height)
+    }
+    
+  
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionInsets
+    }
+
+    
+}
+

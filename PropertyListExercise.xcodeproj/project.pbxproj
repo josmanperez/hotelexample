@@ -10,6 +10,8 @@
 		69384F523B232E62C6CACE2C /* Pods_PropertyListExerciseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1CB8ED290751210D3E20E5C /* Pods_PropertyListExerciseUITests.framework */; };
 		9C03937F2320410C007A90AE /* Policies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C03937E2320410C007A90AE /* Policies.swift */; };
 		9C03938223204D06007A90AE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C03938123204D06007A90AE /* Extensions.swift */; };
+		9C3F6512232189A000A7B7D7 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F65102321899F00A7B7D7 /* ImageCollectionViewCell.swift */; };
+		9C3F6513232189A000A7B7D7 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C3F6511232189A000A7B7D7 /* ImageCollectionViewCell.xib */; };
 		9C40A28A23187F0600326086 /* ApiPropertyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C40A28923187F0600326086 /* ApiPropertyList.swift */; };
 		9C4D6C9E231A77BC003A66B6 /* PropertyListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4D6C9D231A77BC003A66B6 /* PropertyListCellTableViewCell.swift */; };
 		9C4D6CA0231A77EF003A66B6 /* PropertyListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C4D6C9F231A77EF003A66B6 /* PropertyListViewCell.xib */; };
@@ -45,6 +47,8 @@
 		8462C549861D3815B2DFC8B0 /* Pods-PropertyListExercise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PropertyListExercise.release.xcconfig"; path = "Pods/Target Support Files/Pods-PropertyListExercise/Pods-PropertyListExercise.release.xcconfig"; sourceTree = "<group>"; };
 		9C03937E2320410C007A90AE /* Policies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Policies.swift; sourceTree = "<group>"; };
 		9C03938123204D06007A90AE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9C3F65102321899F00A7B7D7 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		9C3F6511232189A000A7B7D7 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		9C40A28923187F0600326086 /* ApiPropertyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPropertyList.swift; sourceTree = "<group>"; };
 		9C4D6C9D231A77BC003A66B6 /* PropertyListCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListCellTableViewCell.swift; sourceTree = "<group>"; };
 		9C4D6C9F231A77EF003A66B6 /* PropertyListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PropertyListViewCell.xib; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 				9C4D6C9D231A77BC003A66B6 /* PropertyListCellTableViewCell.swift */,
 				9C4D6C9F231A77EF003A66B6 /* PropertyListViewCell.xib */,
 				9CB3AEC4231EF86B0096AEEB /* Loading.swift */,
+				9C3F65102321899F00A7B7D7 /* ImageCollectionViewCell.swift */,
+				9C3F6511232189A000A7B7D7 /* ImageCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -300,6 +306,7 @@
 				9C4D6CA0231A77EF003A66B6 /* PropertyListViewCell.xib in Resources */,
 				9C8A09E32317029000250CC1 /* Assets.xcassets in Resources */,
 				9C8A09DE2317028F00250CC1 /* Main.storyboard in Resources */,
+				9C3F6513232189A000A7B7D7 /* ImageCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +430,7 @@
 			files = (
 				9CB3AEC7231EF9ED0096AEEB /* ApiPropertyDetail.swift in Sources */,
 				9C8A0A0023170C3C00250CC1 /* Constants.swift in Sources */,
+				9C3F6512232189A000A7B7D7 /* ImageCollectionViewCell.swift in Sources */,
 				9CB3AEC1231EF4AF0096AEEB /* PropertyDetail.swift in Sources */,
 				9CB3AEC5231EF86B0096AEEB /* Loading.swift in Sources */,
 				9C4D6C9E231A77BC003A66B6 /* PropertyListCellTableViewCell.swift in Sources */,

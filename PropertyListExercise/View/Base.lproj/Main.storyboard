@@ -58,7 +58,7 @@
                                 <rect key="frame" x="0.0" y="88" width="376" height="878"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARu-Qm-okb" userLabel="ContentView">
-                                        <rect key="frame" x="0.0" y="0.0" width="376" height="824.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="376" height="797"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="propertyListDefault" translatesAutoresizingMaskIntoConstraints="NO" id="Ccu-r1-7gT">
                                                 <rect key="frame" x="0.0" y="0.0" width="376" height="250"/>
@@ -132,16 +132,16 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L7s-Cx-zcW" userLabel="AmenitesView">
-                                                <rect key="frame" x="8" y="250" width="360" height="258.5"/>
+                                                <rect key="frame" x="8" y="250" width="360" height="231"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amenites" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZiY-Vq-9oa">
-                                                        <rect key="frame" x="8" y="15" width="344" height="18"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                                        <rect key="frame" x="8" y="15" width="344" height="15.5"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="kGA-NG-cUX">
-                                                        <rect key="frame" x="8" y="45" width="344" height="44"/>
+                                                        <rect key="frame" x="8" y="42.5" width="344" height="44"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sxL-jQ-PRG">
                                                                 <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -182,15 +182,15 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufz-fY-X3j">
-                                                        <rect key="frame" x="8" y="109" width="344" height="18"/>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                                        <rect key="frame" x="8" y="106.5" width="344" height="15.5"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21a-mx-t2m">
-                                                        <rect key="frame" x="8" y="139" width="344" height="99.5"/>
+                                                        <rect key="frame" x="8" y="134" width="344" height="77"/>
                                                         <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate</string>
-                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
+                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="13"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -213,33 +213,37 @@
                                                 </constraints>
                                             </view>
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="McI-TG-O8D">
-                                                <rect key="frame" x="8" y="516.5" width="360" height="130"/>
+                                                <rect key="frame" x="8" y="489" width="360" height="130"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="130" id="RRb-TJ-CnG"/>
                                                 </constraints>
                                             </mapView>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="H9h-2N-X0c">
-                                                <rect key="frame" x="8" y="654.5" width="360" height="150"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="frame" x="8" y="627" width="360" height="150"/>
+                                                <color key="backgroundColor" red="0.14901960780000001" green="0.27450980390000002" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="uCf-5A-58S"/>
                                                 </constraints>
-                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pah-P1-QiC">
-                                                    <size key="itemSize" width="50" height="50"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pah-P1-QiC">
+                                                    <size key="itemSize" width="111" height="103"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="propertyDetailImage" id="60t-LK-LHA">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="propertyDetailImage" id="60t-LK-LHA" customClass="ImageCollectionViewCell" customModule="PropertyListExercise" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="23.5" width="111" height="103"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="111" height="103"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </view>
                                                     </collectionViewCell>
                                                 </cells>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="HpC-5X-pPg" id="6pu-ld-PDV"/>
+                                                    <outlet property="delegate" destination="HpC-5X-pPg" id="q2f-F6-iDn"/>
+                                                </connections>
                                             </collectionView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -295,6 +299,7 @@
                         <outlet property="amenitesLabel" destination="ZiY-Vq-9oa" id="JWP-Jm-x6n"/>
                         <outlet property="amenitesStackView" destination="kGA-NG-cUX" id="LHQ-HO-FUJ"/>
                         <outlet property="backgrounPropertyImage" destination="Ccu-r1-7gT" id="fR9-eo-ZdA"/>
+                        <outlet property="collectionViewImages" destination="H9h-2N-X0c" id="NYz-aX-gvB"/>
                         <outlet property="descriptionLabel" destination="21a-mx-t2m" id="Uml-IA-CuK"/>
                         <outlet property="name" destination="FXf-a6-Gtt" id="nzd-7o-Dvg"/>
                         <outlet property="nameView" destination="q2a-dA-y3W" id="ZBx-Ad-Yzb"/>
@@ -309,7 +314,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Dg-5E-ZMh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1780" y="158"/>
+            <point key="canvasLocation" x="1779.7101449275365" y="157.36607142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tQh-Fd-M0Y">
