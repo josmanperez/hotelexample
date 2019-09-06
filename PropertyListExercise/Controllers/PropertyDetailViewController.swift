@@ -47,8 +47,7 @@ class PropertyDetailViewController: UIViewController {
         
         navigationItem.title = property?.name
         
-        let nibCell = UINib(nibName: ImageCollectionViewCell.nibName, bundle: nil)
-        collectionViewImages.register(nibCell, forCellWithReuseIdentifier: collectionCellReuseIdentifier)
+        configureCollectionView()
         
         startActivityIndicator()
         
@@ -76,12 +75,22 @@ class PropertyDetailViewController: UIViewController {
 
     }
     
+    // - MARK: Fetch results
+    fileprivate func fetchPropertyDetail() {
+        
+    }
+    
     // - MARK: Configure Views
+    
+    fileprivate func configureCollectionView() {
+        let nibCell = UINib(nibName: ImageCollectionViewCell.nibName, bundle: nil)
+        collectionViewImages.register(nibCell, forCellWithReuseIdentifier: collectionCellReuseIdentifier)
+    }
     
     /// Configure the map, load the property and show the pin.
     /// This has to be done on a background thread in order to not overload the mainthread
     /// And not freeze user interface
-    func configureMap(with propertyDetail: ApiPropertyDetail) {
+    fileprivate func configureMap(with propertyDetail: ApiPropertyDetail) {
         // Create a loading view
         let spinner = UIActivityIndicatorView(frame: CGRect.zero)
         spinner.backgroundColor = UIColor.white.withAlphaComponent(0.8)
@@ -126,14 +135,14 @@ class PropertyDetailViewController: UIViewController {
         
     }
     
-    func centerMapOnLocation(location: CLLocation) {
+    fileprivate func centerMapOnLocation(location: CLLocation) {
         let regionRadius: CLLocationDistance = 1000
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
                                                   latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         self.propertyMap.setRegion(coordinateRegion, animated: true)
     }
     
-    func configurePropertyDetailView(propertyDetail: ApiPropertyDetail) {
+    fileprivate func configurePropertyDetailView(propertyDetail: ApiPropertyDetail) {
         
         self.nameView.roundedTopCornersView()
         if let _images = property?.images {

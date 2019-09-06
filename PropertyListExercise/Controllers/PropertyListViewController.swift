@@ -14,8 +14,8 @@ class PropertyListViewController: UIViewController {
     let activityView = UIActivityIndicatorView(style: .gray)
     let showPropertySegue = "showPropertyDetail"
     var results: ApiPropertyList?
-    var apiRequest: ApiRestClient = {
-        let api = ApiRestClient(urlServer: ApiPropertyList.requestUrl)
+    var apiRequest: ApiRestClient<ApiPropertyList> = {
+        let api = ApiRestClient<ApiPropertyList>(urlServer: ApiPropertyList.requestUrl)
         return api
     }()
     @IBOutlet var tableView: UITableView!

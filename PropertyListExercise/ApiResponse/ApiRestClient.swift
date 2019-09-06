@@ -9,17 +9,17 @@
 import Alamofire
 
 /// Class for handle the Rest API request
-class ApiRestClient: ApiRest {
+class ApiRestClient<T:Decodable>: ApiRest {
     
-    typealias T = ApiPropertyList
     var urlServer: String
     
     init(urlServer: String) {
         self.urlServer = urlServer
     }
     
-    /// Method to request list of properties
-    func request(completionHandler: @escaping ((Bool, ApiPropertyList?) -> Void)) {
+    /// Method to request
+    /// - Returns: CompletionHandler with a tuple of Bool regarding the success and object result that conforms protocol Decodable
+    func request(completionHandler: @escaping ((Bool, T?) -> Void)) {
         Alamofire.request(self.urlServer).responseJSON { response in
             
             if response.result.isSuccess {
@@ -29,7 +29,7 @@ class ApiRestClient: ApiRest {
                 }
                 let decoder = JSONDecoder()
                 do {
-                    let results = try decoder.decode(ApiPropertyList.self, from: data)
+                    let results = try decoder.decode(T.self, from: data)
                     completionHandler(true, results)
                 } catch {
                     completionHandler(false, nil)

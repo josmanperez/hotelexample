@@ -15,6 +15,8 @@ class Connectivity {
     
     private init() {  }
     
+    
+    /// - Returns: Bool for wheather there is internet or not
     func isAvailable() -> Bool {
         return NetworkReachabilityManager.init()?.isReachable ?? true
     }
