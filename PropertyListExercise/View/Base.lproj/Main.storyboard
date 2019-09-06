@@ -322,6 +322,7 @@
                         <outlet property="amenitesStackView" destination="kGA-NG-cUX" id="LHQ-HO-FUJ"/>
                         <outlet property="backgrounPropertyImage" destination="Ccu-r1-7gT" id="fR9-eo-ZdA"/>
                         <outlet property="collectionViewImages" destination="H9h-2N-X0c" id="NYz-aX-gvB"/>
+                        <outlet property="contentsView" destination="ARu-Qm-okb" id="s4h-29-nLE"/>
                         <outlet property="descriptionLabel" destination="21a-mx-t2m" id="Uml-IA-CuK"/>
                         <outlet property="mapView" destination="4Xz-JW-5xN" id="N2H-m7-qg5"/>
                         <outlet property="name" destination="FXf-a6-Gtt" id="nzd-7o-Dvg"/>

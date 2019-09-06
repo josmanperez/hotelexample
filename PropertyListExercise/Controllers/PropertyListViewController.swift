@@ -14,7 +14,7 @@ class PropertyListViewController: UIViewController {
     let activityView = UIActivityIndicatorView(style: .gray)
     let showPropertySegue = "showPropertyDetail"
     var results: ApiPropertyList?
-    var apiRequest: ApiRestClient<ApiPropertyList> = {
+    let apiRequest: ApiRestClient<ApiPropertyList> = {
         let api = ApiRestClient<ApiPropertyList>(urlServer: ApiPropertyList.requestUrl)
         return api
     }()
@@ -41,7 +41,7 @@ class PropertyListViewController: UIViewController {
                         self.results = items
                         self.tableView.reloadData()
                     } else {
-                        self.showToast(title: "error".localizedString(), message: "error_fetching_list".localizedString())
+                        self.showToast(title: "error".localizedString(), message: "error_fetching".localizedString())
                     }
                     self.isLoading(active: false)
                     self.refresh.endRefreshing()

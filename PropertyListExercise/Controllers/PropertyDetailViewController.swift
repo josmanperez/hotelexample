@@ -17,8 +17,7 @@ class PropertyDetailViewController: UIViewController {
     var property: Property?
     var propertyDetail: PropertyDetail?
     
-    let request = "https://private-anon-b0f95b2571-practical3.apiary-mock.com/properties/"
-    
+    @IBOutlet weak var contentsView: UIView!
     @IBOutlet weak var backgrounPropertyImage: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var overallRating: UILabel!
@@ -44,40 +43,52 @@ class PropertyDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationItem.title = property?.name
-        
-        configureCollectionView()
-        
-        startActivityIndicator()
-        
-        if let _id = property?.id {
-            Alamofire.request("\(request)\(_id)").responseJSON { response in
-                
-                Loading.stop()
-                
-                if response.result.isSuccess {
-                    guard let data = response.data else { return }
-                    
-                    let decoder = JSONDecoder()
-                    let result = try! decoder.decode(ApiPropertyDetail.self, from: data)
-                    self.propertyDetail = result
-                    self.configurePropertyDetailView(propertyDetail: result)
-                    self.configureMap(with: result)
-                    self.collectionViewImages.reloadData()
-
-                } else {
-                    
-                }
-                
-            }
+        //contentsView.alpha = 0
+        if !Connectivity.shared.isAvailable() {
+            showToast(title: "error".localizedString(), message: "no_internet".localizedString())
         }
-
+        navigationItem.title = property?.name
+        configureCollectionView()
+        fetchPropertyDetail()
+        
     }
     
     // - MARK: Fetch results
+    
     fileprivate func fetchPropertyDetail() {
-        
+        startActivityIndicator()
+        guard let _id = property?.id else {
+            showToast(title: "error".localizedString(), message: "error_fetching".localizedString())
+            return
+        }
+        let apiRequest = ApiRestClient<ApiPropertyDetail>(urlServer: "\(ApiPropertyDetail.requestUrl)/\(_id)")
+        DispatchQueue.global(qos: .userInitiated).async {
+            apiRequest.request(completionHandler: { (success, item) in
+                DispatchQueue.main.async {
+                    if success {
+                        guard let _item = item else {
+                            self.showToast(title: "error".localizedString(), message: "error_fetching".localizedString())
+                            return
+                        }
+                        self.propertyDetail = _item
+                        self.configurePropertyDetailView(propertyDetail: _item)
+                        self.configureMap(with: _item)
+                        self.collectionViewImages.reloadData()
+                    } else {
+                        self.showToast(title: "error".localizedString(), message: "error_fetching".localizedString())
+                    }
+                    Loading.stop()
+                }
+            })
+        }
+    }
+    
+    // - MARK: Toast View
+    
+    func showToast(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "dismiss".localizedString(), style: .default))
+        present(alert, animated: true, completion: nil)
     }
     
     // - MARK: Configure Views

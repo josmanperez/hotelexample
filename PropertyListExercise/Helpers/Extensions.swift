@@ -45,7 +45,7 @@ extension String {
     
     /// - Returns: the translated string in Translations file
     func localizedString() -> String {
-        return NSLocalizedString(self, comment: "")
+        return NSLocalizedString(self, comment: "Error")
     }
 }
 

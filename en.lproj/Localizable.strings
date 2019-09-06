@@ -8,6 +8,6 @@
 
 "error" = "Error";
 "dismiss" = "Dismiss";
-"error_fetching_list" = "There is an error with the server.\n Try again later";
+"error_fetching" = "There is an error with the server.\n Try again later";
 "refresh_property_list" = "Loading properties...";
 "no_internet" = "There seems to be no internet connection, try again later";
