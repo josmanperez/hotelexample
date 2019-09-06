@@ -12,6 +12,9 @@
 		9C03938223204D06007A90AE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C03938123204D06007A90AE /* Extensions.swift */; };
 		9C3BA7842322C1EC008433D7 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3BA7832322C1EC008433D7 /* Connectivity.swift */; };
 		9C3BA7872322C5C6008433D7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C3BA7892322C5C6008433D7 /* Localizable.strings */; };
+		9C3BA78B2322CC9D008433D7 /* ApiRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3BA78A2322CC9D008433D7 /* ApiRest.swift */; };
+		9C3BA78D2322CE5A008433D7 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3BA78C2322CE5A008433D7 /* ApiError.swift */; };
+		9C3BA78F2322D2AA008433D7 /* ApiRestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3BA78E2322D2AA008433D7 /* ApiRestClient.swift */; };
 		9C3F6512232189A000A7B7D7 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F65102321899F00A7B7D7 /* ImageCollectionViewCell.swift */; };
 		9C3F6513232189A000A7B7D7 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C3F6511232189A000A7B7D7 /* ImageCollectionViewCell.xib */; };
 		9C3F65152321A49800A7B7D7 /* MapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F65142321A49800A7B7D7 /* MapHelper.swift */; };
@@ -52,6 +55,9 @@
 		9C03938123204D06007A90AE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9C3BA7832322C1EC008433D7 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		9C3BA7882322C5C6008433D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9C3BA78A2322CC9D008433D7 /* ApiRest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRest.swift; sourceTree = "<group>"; };
+		9C3BA78C2322CE5A008433D7 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		9C3BA78E2322D2AA008433D7 /* ApiRestClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRestClient.swift; sourceTree = "<group>"; };
 		9C3F65102321899F00A7B7D7 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		9C3F6511232189A000A7B7D7 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		9C3F65142321A49800A7B7D7 /* MapHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHelper.swift; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 			children = (
 				9C03938123204D06007A90AE /* Extensions.swift */,
 				9C3BA7832322C1EC008433D7 /* Connectivity.swift */,
+				9C3BA78C2322CE5A008433D7 /* ApiError.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -129,6 +136,8 @@
 			children = (
 				9C40A28923187F0600326086 /* ApiPropertyList.swift */,
 				9CB3AEC6231EF9EC0096AEEB /* ApiPropertyDetail.swift */,
+				9C3BA78A2322CC9D008433D7 /* ApiRest.swift */,
+				9C3BA78E2322D2AA008433D7 /* ApiRestClient.swift */,
 			);
 			path = ApiResponse;
 			sourceTree = "<group>";
@@ -448,12 +457,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C3BA78B2322CC9D008433D7 /* ApiRest.swift in Sources */,
 				9CB3AEC7231EF9ED0096AEEB /* ApiPropertyDetail.swift in Sources */,
 				9C8A0A0023170C3C00250CC1 /* Constants.swift in Sources */,
 				9C3F6512232189A000A7B7D7 /* ImageCollectionViewCell.swift in Sources */,
 				9CB3AEC1231EF4AF0096AEEB /* PropertyDetail.swift in Sources */,
 				9CB3AEC5231EF86B0096AEEB /* Loading.swift in Sources */,
 				9C4D6C9E231A77BC003A66B6 /* PropertyListCellTableViewCell.swift in Sources */,
+				9C3BA78F2322D2AA008433D7 /* ApiRestClient.swift in Sources */,
 				9CB3AEC3231EF62E0096AEEB /* PropertyDetailViewController.swift in Sources */,
 				9C3BA7842322C1EC008433D7 /* Connectivity.swift in Sources */,
 				9C8A09DB2317028F00250CC1 /* PropertyListViewController.swift in Sources */,
@@ -462,6 +473,7 @@
 				9C40A28A23187F0600326086 /* ApiPropertyList.swift in Sources */,
 				9C8A09FE2317047300250CC1 /* Property.swift in Sources */,
 				9C03937F2320410C007A90AE /* Policies.swift in Sources */,
+				9C3BA78D2322CE5A008433D7 /* ApiError.swift in Sources */,
 				9C8A09D92317028F00250CC1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

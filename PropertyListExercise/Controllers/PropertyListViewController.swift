@@ -13,9 +13,11 @@ class PropertyListViewController: UIViewController {
     
     let activityView = UIActivityIndicatorView(style: .gray)
     let showPropertySegue = "showPropertyDetail"
-    let request = "https://private-anon-b0f95b2571-practical3.apiary-mock.com/cities/1530/properties/"
     var results: ApiPropertyList?
-    
+    var apiRequest: ApiRestClient = {
+        let api = ApiRestClient(urlServer: ApiPropertyList.requestUrl)
+        return api
+    }()
     @IBOutlet var tableView: UITableView!
     private let refresh = UIRefreshControl()
     
@@ -23,33 +25,29 @@ class PropertyListViewController: UIViewController {
         super.viewDidLoad()
         
         if !Connectivity.shared.isAvailable() {
-           showToast()
+            showToast(title: "error".localizedString(), message: "no_internet".localizedString())
         }
         
         setupTableView()
-        
         createActivityIndicatory()
-        
-        Alamofire.request(request).responseJSON { response in
-            self.isLoading(active: false)
-            
-            if response.result.isSuccess {
-                guard let data = response.data else { return }
-                //print("JSON: \((response.result.value) ?? "Error")")
-                
-                let decoder = JSONDecoder()
-                self.results = try! decoder.decode(ApiPropertyList.self, from: data)
-                
-                //print("\(String(describing: self.results))")
-            
-                self.tableView.reloadData()
-                
-            } else {
-                
+        fetchPropertyList()
+    }
+    
+    @objc func fetchPropertyList() {
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.apiRequest.request { (success, items) in
+                DispatchQueue.main.async {
+                    if success {
+                        self.results = items
+                        self.tableView.reloadData()
+                    } else {
+                        self.showToast(title: "error".localizedString(), message: "error_fetching_list".localizedString())
+                    }
+                    self.isLoading(active: false)
+                    self.refresh.endRefreshing()
+                }
             }
-            
         }
-        
     }
     
     func setupTableView() {
@@ -58,7 +56,7 @@ class PropertyListViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.refreshControl = refresh
         refresh.attributedTitle = NSAttributedString(string: "refresh_property_list".localizedString(), attributes: [NSAttributedString.Key.font : UIFont(name: "Helvetica-Neue", size: 10) ?? UIFont.systemFont(ofSize: 10)])
-        refresh.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        refresh.addTarget(self, action: #selector(fetchPropertyList), for: .valueChanged)
     }
     
     func createActivityIndicatory() {
@@ -73,14 +71,10 @@ class PropertyListViewController: UIViewController {
         active ? activityView.startAnimating() : activityView.stopAnimating()
     }
     
-    func showToast() {
-        let alert = UIAlertController(title: "error".localizedString(), message: "no_internet".localizedString(), preferredStyle: .alert)
+    func showToast(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "dismiss".localizedString(), style: .default))
         present(alert, animated: true, completion: nil)
-    }
-    
-    @objc func loadData() {
-        refresh.endRefreshing()
     }
     
 }
