@@ -27,7 +27,6 @@ class PropertyDetail: Property {
     var policies:[Policies]?
     var latitude: Double?
     var longitude: Double?
-    //var mainImage: PropertyImage?
     var detailImages:[PropertyImage]
     
     required init(from decoder: Decoder) throws {

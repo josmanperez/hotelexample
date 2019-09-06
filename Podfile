@@ -6,6 +6,7 @@ target 'PropertyListExercise' do
   use_frameworks!
   pod 'Alamofire', '~> 4.8.2'
   pod 'Kingfisher', '~> 5.0'
+  pod 'ReachabilitySwift'
 
   # Pods for PropertyListExercise
 

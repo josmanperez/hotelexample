@@ -10,6 +10,8 @@
 		69384F523B232E62C6CACE2C /* Pods_PropertyListExerciseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1CB8ED290751210D3E20E5C /* Pods_PropertyListExerciseUITests.framework */; };
 		9C03937F2320410C007A90AE /* Policies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C03937E2320410C007A90AE /* Policies.swift */; };
 		9C03938223204D06007A90AE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C03938123204D06007A90AE /* Extensions.swift */; };
+		9C3BA7842322C1EC008433D7 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3BA7832322C1EC008433D7 /* Connectivity.swift */; };
+		9C3BA7872322C5C6008433D7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C3BA7892322C5C6008433D7 /* Localizable.strings */; };
 		9C3F6512232189A000A7B7D7 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F65102321899F00A7B7D7 /* ImageCollectionViewCell.swift */; };
 		9C3F6513232189A000A7B7D7 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C3F6511232189A000A7B7D7 /* ImageCollectionViewCell.xib */; };
 		9C3F65152321A49800A7B7D7 /* MapHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3F65142321A49800A7B7D7 /* MapHelper.swift */; };
@@ -48,6 +50,8 @@
 		8462C549861D3815B2DFC8B0 /* Pods-PropertyListExercise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PropertyListExercise.release.xcconfig"; path = "Pods/Target Support Files/Pods-PropertyListExercise/Pods-PropertyListExercise.release.xcconfig"; sourceTree = "<group>"; };
 		9C03937E2320410C007A90AE /* Policies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Policies.swift; sourceTree = "<group>"; };
 		9C03938123204D06007A90AE /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9C3BA7832322C1EC008433D7 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		9C3BA7882322C5C6008433D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9C3F65102321899F00A7B7D7 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		9C3F6511232189A000A7B7D7 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		9C3F65142321A49800A7B7D7 /* MapHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHelper.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				9C03938123204D06007A90AE /* Extensions.swift */,
+				9C3BA7832322C1EC008433D7 /* Connectivity.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -155,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				9C8A09D72317028F00250CC1 /* PropertyListExercise */,
+				9C3BA7892322C5C6008433D7 /* Localizable.strings */,
 				9C8A09EF2317029100250CC1 /* PropertyListExerciseUITests */,
 				9C8A09D62317028F00250CC1 /* Products */,
 				CD483C5F63DBB8C9831EBD28 /* Pods */,
@@ -314,6 +320,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C8A09E62317029000250CC1 /* LaunchScreen.storyboard in Resources */,
+				9C3BA7872322C5C6008433D7 /* Localizable.strings in Resources */,
 				9C4D6CA0231A77EF003A66B6 /* PropertyListViewCell.xib in Resources */,
 				9C8A09E32317029000250CC1 /* Assets.xcassets in Resources */,
 				9C8A09DE2317028F00250CC1 /* Main.storyboard in Resources */,
@@ -391,11 +398,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-PropertyListExercise/Pods-PropertyListExercise-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -446,6 +455,7 @@
 				9CB3AEC5231EF86B0096AEEB /* Loading.swift in Sources */,
 				9C4D6C9E231A77BC003A66B6 /* PropertyListCellTableViewCell.swift in Sources */,
 				9CB3AEC3231EF62E0096AEEB /* PropertyDetailViewController.swift in Sources */,
+				9C3BA7842322C1EC008433D7 /* Connectivity.swift in Sources */,
 				9C8A09DB2317028F00250CC1 /* PropertyListViewController.swift in Sources */,
 				9C03938223204D06007A90AE /* Extensions.swift in Sources */,
 				9C3F65152321A49800A7B7D7 /* MapHelper.swift in Sources */,
@@ -475,6 +485,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		9C3BA7892322C5C6008433D7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C3BA7882322C5C6008433D7 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		9C8A09DC2317028F00250CC1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  PropertyListExercise
+
+  Created by Josman Pérez Expósito on 06/09/2019.
+  Copyright © 2019 personal. All rights reserved.
+*/
+
+"error" = "Error";
+"dismiss" = "Dismiss";
+"no_internet" = "There seems to be no internet connection, try again later";

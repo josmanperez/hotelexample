@@ -87,13 +87,3 @@ class Property: Decodable {
     
 }
 
-//extension Property: Decodable {
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//
-//        self.id = try container.decode(String.self, forKey: .id)
-//        self.name = try container.decode(String.self, forKey: .name)
-//        self.rating = try container.decode(OverallRating.self, forKey: .rating)
-//    }
-//}
-

@@ -22,8 +22,8 @@ extension UIView {
     
     func roundedTopCornersView() {
         let maskPath = UIBezierPath(roundedRect: bounds,
-                                     byRoundingCorners: [.topLeft , .topRight],
-                                     cornerRadii: CGSize(width: 8, height: 8))
+                                    byRoundingCorners: [.topLeft , .topRight],
+                                    cornerRadii: CGSize(width: 8, height: 8))
         let maskLayer = CAShapeLayer()
         maskLayer.frame = bounds
         maskLayer.path = maskPath.cgPath
@@ -32,11 +32,20 @@ extension UIView {
     
     func roundedBottomCornersView() {
         let maskPath = UIBezierPath(roundedRect: bounds,
-                                     byRoundingCorners: [.bottomLeft , .bottomRight],
-                                     cornerRadii: CGSize(width: 8, height: 8))
+                                    byRoundingCorners: [.bottomLeft , .bottomRight],
+                                    cornerRadii: CGSize(width: 8, height: 8))
         let maskLayer = CAShapeLayer()
         maskLayer.frame = bounds
         maskLayer.path = maskPath.cgPath
         layer.mask = maskLayer
     }
 }
+
+extension String {
+    
+    /// - Returns: the translated string in Translations file
+    func localizedString() -> String {
+        return NSLocalizedString(self, comment: "")
+    }
+}
+

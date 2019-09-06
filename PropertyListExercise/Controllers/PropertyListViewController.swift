@@ -17,18 +17,18 @@ class PropertyListViewController: UIViewController {
     var results: ApiPropertyList?
     
     @IBOutlet var tableView: UITableView!
-    
+    private let refresh = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.register(UINib(nibName: PropertyListCellTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: PropertyListCellTableViewCell.reuseIdentifier)
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+        if !Connectivity.shared.isAvailable() {
+           showToast()
+        }
+        
+        setupTableView()
         
         createActivityIndicatory()
-        
-        isLoading(active: true)
         
         Alamofire.request(request).responseJSON { response in
             self.isLoading(active: false)
@@ -52,15 +52,36 @@ class PropertyListViewController: UIViewController {
         
     }
     
+    func setupTableView() {
+        self.tableView.register(UINib(nibName: PropertyListCellTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: PropertyListCellTableViewCell.reuseIdentifier)
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.refreshControl = refresh
+        refresh.attributedTitle = NSAttributedString(string: "refresh_property_list".localizedString(), attributes: [NSAttributedString.Key.font : UIFont(name: "Helvetica-Neue", size: 10) ?? UIFont.systemFont(ofSize: 10)])
+        refresh.addTarget(self, action: #selector(loadData), for: .valueChanged)
+    }
+    
     func createActivityIndicatory() {
         activityView.center = self.view.center
         self.view.addSubview(activityView)
+        if !activityView.isAnimating {
+            isLoading(active: true)
+        }
     }
     
     func isLoading(active: Bool) {
         active ? activityView.startAnimating() : activityView.stopAnimating()
     }
     
+    func showToast() {
+        let alert = UIAlertController(title: "error".localizedString(), message: "no_internet".localizedString(), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "dismiss".localizedString(), style: .default))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func loadData() {
+        refresh.endRefreshing()
+    }
     
 }
 
@@ -109,6 +130,4 @@ extension PropertyListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
-    
 }
-
