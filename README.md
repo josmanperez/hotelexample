@@ -11,7 +11,7 @@ HostelWord is a project to demonstrate the use of several components within iOS 
 ## Features
 
 - [x] Retrieve real data from a server (powered by http://docs.practical3.apiary.io/.)
-- [x] Converts JSON data into objects using Codable library.
+- [x]  Converts JSON data into objects using Codable library.
 - [x] Displays data on two differents screens (property list table view and a detail view controller).
 - [x] Uses Apple MapKit to display the location of the property.
 
