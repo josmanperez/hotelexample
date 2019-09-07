@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 
+/// Singlenton class to ask for connectivity of the device
 class Connectivity {
     
     static let shared = Connectivity()
