@@ -9,26 +9,52 @@
 import XCTest
 
 class PropertyListExerciseUITests: XCTestCase {
+    
+    var app: XCUIApplication!
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
+        
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
 
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
+        app = XCUIApplication()
+        
+        app.launchArguments.append("--uitesting")
 
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+       
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
     }
 
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testFirstProperty() {
+        app.launch()
+        
+        // Grab the first element in the table using the title
+        var element = app.tables.staticTexts["STF Vandrarhem Stigbergsliden"]
+        
+        let exists = NSPredicate(format: "exists == true")
+        // Wait for the WS to complete the request
+        expectation(for: exists, evaluatedWith: element, handler: nil)
+        waitForExpectations(timeout: 3, handler: nil)
+        // The first return property is the expected
+        XCTAssertTrue(element.exists)
+        // Go to detail screen
+        XCUIApplication().tables/*@START_MENU_TOKEN@*/.staticTexts["STF Vandrarhem Stigbergsliden"]/*[[".cells.staticTexts[\"STF Vandrarhem Stigbergsliden\"]",".staticTexts[\"STF Vandrarhem Stigbergsliden\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        element = app.staticTexts["STF Vandrarhem Stigbergsliden"]
+        expectation(for: exists, evaluatedWith: element, handler: nil)
+        waitForExpectations(timeout: 3, handler: nil)
+        // Title
+        XCTAssertTrue(element.exists)
+        // City
+        XCTAssertTrue(app.staticTexts["Gothenburg, Sweden"].exists)
+        // Rating
+        XCTAssertTrue(app.staticTexts["82"].exists)
+        
     }
+    
+    
 
 }
