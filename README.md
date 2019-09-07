@@ -1,4 +1,4 @@
-![HostelWorld](https://imgur.com/142YmBW)
+![HostelWorld](https://i.imgur.com/142YmBW.png)
 
 HostelWord is a project to demonstrate the use of several components within iOS framework 
 
