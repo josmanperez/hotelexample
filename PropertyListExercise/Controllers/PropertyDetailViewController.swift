@@ -33,9 +33,9 @@ class PropertyDetailViewController: UIViewController {
     
     @IBOutlet weak var collectionViewImages: UICollectionView!
     fileprivate let sectionInsets = UIEdgeInsets(top: 0.0,
-                                             left: 0.0,
-                                             bottom: 00.0,
-                                             right: 0.0)
+                                                 left: 0.0,
+                                                 bottom: 00.0,
+                                                 right: 0.0)
     fileprivate let numberOfItems:CGFloat = 2
     
     @IBOutlet weak var mapView: UIView!
@@ -114,27 +114,28 @@ class PropertyDetailViewController: UIViewController {
         NSLayoutConstraint(item: spinner, attribute: .bottom, relatedBy: .equal, toItem: propertyMap, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
         NSLayoutConstraint(item: spinner, attribute: .top, relatedBy: .equal, toItem: propertyMap, attribute: .top, multiplier: 1, constant: 0).isActive = true
         
+        guard let _latitude = propertyDetail.latitude, let _longitude = propertyDetail.longitude else {
+            let view = UIView(frame: self.propertyMap.frame)
+            view.translatesAutoresizingMaskIntoConstraints = false
+            view.backgroundColor = UIColor.white
+            view.alpha = 0.8
+            let label = UILabel()
+            label.text = "No property location found"
+            label.font = UIFont(name: "Helvetica-Neue", size: 5)
+            view.addSubview(label)
+            label.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint(item: label, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: label, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
+            self.propertyMap.addSubview(view)
+            NSLayoutConstraint(item: view, attribute: .leading, relatedBy: .equal, toItem: self.propertyMap, attribute: .leading, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: .equal, toItem: self.propertyMap, attribute: .trailing, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: self.propertyMap, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
+            NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: self.propertyMap, attribute: .top, multiplier: 1, constant: 0).isActive = true
+            return
+        }
         // Call the background thread to search for the location
         DispatchQueue.global(qos: .background).async {
-            guard let _latitude = propertyDetail.latitude, let _longitude = propertyDetail.longitude else {
-                let view = UIView(frame: self.propertyMap.frame)
-                view.translatesAutoresizingMaskIntoConstraints = false
-                view.backgroundColor = UIColor.white
-                view.alpha = 0.8
-                let label = UILabel()
-                label.text = "No property location found"
-                label.font = UIFont(name: "Helvetica-Neue", size: 5)
-                view.addSubview(label)
-                label.translatesAutoresizingMaskIntoConstraints = false
-                NSLayoutConstraint(item: label, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0).isActive = true
-                NSLayoutConstraint(item: label, attribute: .centerY, relatedBy: .equal, toItem: view, attribute: .centerY, multiplier: 1, constant: 0).isActive = true
-                self.propertyMap.addSubview(view)
-                NSLayoutConstraint(item: view, attribute: .leading, relatedBy: .equal, toItem: self.propertyMap, attribute: .leading, multiplier: 1, constant: 0).isActive = true
-                NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: .equal, toItem: self.propertyMap, attribute: .trailing, multiplier: 1, constant: 0).isActive = true
-                NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: self.propertyMap, attribute: .bottom, multiplier: 1, constant: 0).isActive = true
-                NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: self.propertyMap, attribute: .top, multiplier: 1, constant: 0).isActive = true
-                return
-            }
+            
             let location = CLLocation(latitude: _latitude, longitude: _longitude)
             let artwork = MapHelper(title: propertyDetail.name, rating: self.property?.rating, coordinate: CLLocationCoordinate2D(latitude: _latitude, longitude: _longitude))
             DispatchQueue.main.async { [weak self] in
@@ -170,7 +171,7 @@ class PropertyDetailViewController: UIViewController {
         descriptionLabel.text = propertyDetail.description
         amenitesAndDetailView.layoutIfNeeded()
         amenitesAndDetailView.roundedBottomCornersView()
-
+        
     }
     
     fileprivate func configureAmenites(propertyDetail: PropertyDetail) {
@@ -178,7 +179,7 @@ class PropertyDetailViewController: UIViewController {
             amenitesStackView.isHidden = true
             return
         }
-
+        
         for (_index, policy) in _policites.enumerated() {
             if _index < _amenitesImage.count {
                 _amenitesImage[_index].image = UIImage(named: policy.element.image)
@@ -239,7 +240,7 @@ class PropertyDetailViewController: UIViewController {
             view.addSubview(spinnerView)
         }
     }
-
+    
 }
 
 extension PropertyDetailViewController: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -281,20 +282,20 @@ extension PropertyDetailViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-      
+        
         
         let witdh = (collectionView.frame.width - (sectionInsets.left + sectionInsets.right)) / numberOfItems
         
         return CGSize(width: witdh, height: collectionView.frame.height)
     }
     
-  
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
         return sectionInsets
     }
-
+    
     
 }
 
